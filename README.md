@@ -1,2 +1,2 @@
 # flashdragons.github.io
-My own blog: [FlashDragon's Home](https://flashdragons.github.io/en-us/index.html)
+My own blog: [FlashDragon's Home](https://flashdragons.github.io/index_en-us.html)
