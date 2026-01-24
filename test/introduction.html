@@ -6,6 +6,23 @@
     <title>Introduce My Minecraft Skin</title>
     <link rel="icon" type="image/x-icon" href="https://flashdragons.github.io/assets/icon.ico" />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
+    <style>
+        /* 定义字体 */
+        @font-face {
+            font-family: 'LXGW WenKai GB';
+            src: url('https://cdn.jsdelivr.net/gh/lxgw/LxgwWenkaiGB@main/fonts/LXGWWenKaiGB-Medium.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* 应用字体 */
+        body {
+            font-family: 'LXGW WenKai GB', 'Microsoft YaHei', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
     <style>
         .large_1 {
             font-size: 24px;
@@ -16,10 +33,13 @@
     </style>
 </head>
 <body>
-    <div class="large color"><h1>This is an introduction photo of my Minecraft skin.</h1></div>
-    <div class="large_1 color_1">The character is Lute, the protagonist from MHST1. I really love this piece, it was a gift from one of my friend, and I made some adjustment with the permission.</div>
-    <div>
-        <img src="./assets/Introduction.jpg" alt="This is an introduction photo of my Minecraft skin." width="819.2" height="409.6">
+    <div class="container">
+        <div class="large color"><h1>This is an introduction photo of my Minecraft skin.</h1></div>
+        <div class="large_1 color_1">The character is Lute, the protagonist from MHST1. I really love this piece, it was a gift from one of my friend, and I made some adjustment with the permission.</div>
+        <div>
+            <img src="./assets/Introduction.jpg" alt="This is an introduction photo of my Minecraft skin." width="819.2" height="409.6">
+        </div>
+        <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
     </div>
 </body>
 </html>

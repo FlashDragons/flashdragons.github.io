@@ -5,31 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>A test page of links</title>
     <link rel="icon" type="x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
+    <style>
+        /* 定义字体 */
+        @font-face {
+            font-family: 'LXGW WenKai GB';
+            src: url('https://cdn.jsdelivr.net/gh/lxgw/LxgwWenkaiGB@main/fonts/LXGWWenKaiGB-Medium.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* 应用字体 */
+        body {
+            font-family: 'LXGW WenKai GB', 'Microsoft YaHei', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <p>This is a test page of links.</p>
-        <p>I just found there are many types when display a url.</p>
-        <p>Specifies where to display the linked URL. It is a name of, or keyword for, a browsing context: a tab, window, or 《iframe》. The following keywords have special meanings:</p>
-        <ul>
-            <li>_self: Load the URL into the same browsing context as the current one. This is the default behavior.</li>
-            <li>_blank: Load the URL into a new browsing context. This is usually a tab, but users can configure browsers to use new windows instead.</li>
-            <li>_parent: Load the URL into the parent browsing context of the current one. If there is no parent, this behaves the same way as _self.</li>
-            <li>_top: Load the URL into the top-level browsing context (that is, the "highest" browsing context that is an ancestor of the current one, and has no parent). If there is no parent, this behaves the same way as _self.</li>
-        </ul>
-        <p>Note: When using target, consider adding rel="noreferrer" to avoid exploitation of the window.opener API.</p>
-        <p>Note: Linking to another page using target="_blank" will run the new page on the same process as your page. If the new page is executing expensive JS, your page's performance may suffer. To avoid this use rel="noopener".</p>
-        <p>Baseline icon Widely available across major browsers (Baseline since 2015)</p>
+    <div class="container">
+        <div>
+            <p>This is a test page of links.</p>
+            <p>I just found there are many types when display a url.</p>
+            <p>Specifies where to display the linked URL. It is a name of, or keyword for, a browsing context: a tab, window, or 《iframe》. The following keywords have special meanings:</p>
+            <ul>
+                <li>_self: Load the URL into the same browsing context as the current one. This is the default behavior.</li>
+                <li>_blank: Load the URL into a new browsing context. This is usually a tab, but users can configure browsers to use new windows instead.</li>
+                <li>_parent: Load the URL into the parent browsing context of the current one. If there is no parent, this behaves the same way as _self.</li>
+                <li>_top: Load the URL into the top-level browsing context (that is, the "highest" browsing context that is an ancestor of the current one, and has no parent). If there is no parent, this behaves the same way as _self.</li>
+            </ul>
+            <p>Note: When using target, consider adding rel="noreferrer" to avoid exploitation of the window.opener API.</p>
+            <p>Note: Linking to another page using target="_blank" will run the new page on the same process as your page. If the new page is executing expensive JS, your page's performance may suffer. To avoid this use rel="noopener".</p>
+            <p>Baseline icon Widely available across major browsers (Baseline since 2015)</p>
+        </div>
+        <div>
+            <p>Here are some test link urls:</p>
+            <ul>
+                <li><a href="../index_en-us.html">FlashDragon's Home</a>: no target</li>
+                <li><a href="../index_en-us.html" target="_blank">FlashDragon's Home</a>: target="_blank"</li>
+                <li><a href="../index_en-us.html" target="_parent">FlashDragon's Home</a>: target="_parent"</li>
+                <li><a href="../index_en-us.html" target="_self">FlashDragon's Home</a>: target="_self"</li>
+                <li><a href="../index_en-us.html" target="_top">FlashDragon's Home</a>: target="_top"</li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <p>Here are some test link urls:</p>
-        <ul>
-            <li><a href="../index_en-us.html">FlashDragon's Home</a>: no target</li>
-            <li><a href="../index_en-us.html" target="_blank">FlashDragon's Home</a>: target="_blank"</li>
-            <li><a href="../index_en-us.html" target="_parent">FlashDragon's Home</a>: target="_parent"</li>
-            <li><a href="../index_en-us.html" target="_self">FlashDragon's Home</a>: target="_self"</li>
-            <li><a href="../index_en-us.html" target="_top">FlashDragon's Home</a>: target="_top"</li>
-        </ul>
-    </div>
+    <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
