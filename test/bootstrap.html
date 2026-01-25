@@ -66,6 +66,10 @@
             </form>
         </div>
         </aside>
+        <figure>
+            <figcaption>Listen to <span style="font-style: italic;">One Day in Spring</span> by <span style="font-style: italic;">Bandari</span>.</figcaption>
+            <audio controls loop="1" src="assets/Bandari - One Day In Spring.ogg"></audio>
+        </figure>
         <div class="button">
             <h1>Buttons test 按钮测试</h1>
             <button class="btn">A Basic Button</button>
@@ -210,6 +214,89 @@
             <p class="text-body">默认文本</p>
             <p class="text-black-50">50% 黑色</p>
         </div>
+        <h1>表格测试</h1>
+        <div class="row"><!--定义行-->
+            <div class="col-12"><!--定义列-->
+                <table class="table table-bordered table-hover text-center"><!--table-bordered边框，table-hover鼠标经过时变深-->
+                    <thread>
+                        <th class="text-primary text-bg-info">项目</th><!--定义标题-->
+                        <th class="text-primary text-bg-info">本体</th>
+                        <th class="text-primary text-bg-info">Digital Deluxe</th>
+                    </thread>
+                    <tbody>
+                        <tr><!--一行-->
+                            <th>Monster Hunter: World</th>
+                            <td>￥148</td><!--内容-->
+                            <td><span style="color: green;">￥346</span></td>
+                        </tr>
+                        <tr>
+                            <th class="text-bg-light">Monster Hunter Stories 2: Wings of Ruin</th>
+                            <td class="text-bg-light">￥198</td>
+                            <td class="text-bg-light"><span style="color: green;">￥248</span></td>
+                        </tr>
+                        <tr>
+                            <th>Monster Hunter: Rise</th>
+                            <td>￥198</td>
+                            <td><span style="color: green;">￥348</span></td>
+                        </tr>
+                        <tr>
+                            <th class="text-bg-light">Monster Hunter: Stories</th>
+                            <td class="text-bg-light"><span style="color: green;">￥148</span></td>
+                            <td class="text-bg-light">N/A</td>
+                        </tr>
+                        <tr>
+                            <th>Monster Hunter: Wilds</th>
+                            <td>￥348</td>
+                            <td><span style="color: green;">￥548</span></td>
+                        </tr>
+                        <tr>
+                            <th class="text-bg-light">Monster Hunter Stories 3 Twisted Reflection</th>
+                            <td class="text-bg-light">￥298</td>
+                            <td class="text-bg-light"><span style="color: green;">￥428</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h1>图片测试</h1>
+        <div><table class="table-bordered text-center"><tbody>
+            <tr>
+                <td><p>普通图片</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td></th><p>圆角rounded</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角rounded-1</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-1" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角rounded-bottom-1</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-bottom-1" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+            </tr>
+            <tr>
+                <td><p>圆角rounded-end-1</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-end-1" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角rounded-start-1</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-start-1" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角rounded-top-1</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-top-1" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角rounded-pill</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-pill" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+            </tr>
+            <tr>
+                <td><p>圆角rounded-circle</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-circle" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角rounded-2</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-2" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角rounded-3</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-3" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角rounded-4</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="rounded-4" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+            </tr>
+            <tr>
+                <td><p>img-fluid</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="img-fluid" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+                <td><p>圆角边框img-thumbnail</p>
+                <img src="./assets/Safi'jiiva+Xeno'jiiva.jpg" class="img-thumbnail" width="300px" alt="Safi'jiiva and Xeno'jiiva in Monster Hunter: World."></td>
+            </tr>
+        </tbody></table></div>
     </div>
     <footer class="site-footer"> <!-- 页脚 -->
         <p>&copy; 2026 我的网站，保留所有权利。</p>
