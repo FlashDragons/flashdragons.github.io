@@ -1,0 +1,33 @@
+var _____WB$wombat$assign$function_____=function(name){return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name))||self[name];};if(!self.__WB_pmw){self.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opens = _____WB$wombat$assign$function_____("opens");
+window.onload = function(){var imgs = document.getElementsByTagName("img"),imgs_len = imgs.length;for (var i = 0;i < imgs_len;i++){var src = imgs[i].src.split("##SJ##");if(typeof(src[1]) == "string"){if(src[1]){imgs[i].src = src[0];imgs[i].className = imgs[i].className ? imgs[i].className + " sunju_face":"sunju_face";var imgcopy = imgs[i].cloneNode(true);var w1 = imgs[i].width,w0 = w1 * 7 / 4,w2 = w1 * 3 / 8;var parent = document.createElement("div");parent.className = "sunju_facemall_main";parent.setAttribute("style","width:"+ w1 + "px;height:"+ w1 + "px");parent.appendChild(imgcopy);var img = document.createElement("img");img.className = "sunju_facemall";img.src = src[1];img.setAttribute("style","display:block;width:" + w0 + "px;height:" + w0 + "px;left:-" + w2 + "px;top:-" + w2 + "px;");parent.appendChild(img);imgs[i].parentNode.replaceChild(parent,imgs[i]);}}else if(imgs[i].className == "sunju_facemall"){var pp = imgs[i].parentNode,w1 = pp.firstChild.width,w0 = w1 * 7 / 4,w2 = w1 * 3 / 8;pp.setAttribute("style","width:"+ w1 + "px;height:"+ w1 + "px");imgs[i].setAttribute("style","display:block;width:" + w0 + "px;height:" + w0 + "px;left:-" + w2 + "px;top:-" + w2 + "px;");pp.firstChild.className = pp.firstChild.className ? pp.firstChild.className + " sunju_face":"sunju_face";}}};
+
+}
+
+/*
+     FILE ARCHIVED ON 03:11:06 Jan 11, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 03:35:11 Jan 26, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.651
+  exclusion.robots: 0.026
+  exclusion.robots.policy: 0.017
+  esindex: 0.011
+  cdx.remote: 4.506
+  LoadShardBlock: 209.714 (3)
+  PetaboxLoader3.datanode: 268.872 (5)
+  load_resource: 204.662 (2)
+  PetaboxLoader3.resolve: 98.905 (2)
+*/
