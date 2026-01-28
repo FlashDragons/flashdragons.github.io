@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A clock test</title>
+    <link rel="icon" type="x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
+    <link rel="stylesheet" href="./Time_Check_Image.css">
+</head>
+<body>
+    <div class="container">
+    <h1>时钟测试</h1>
+    <div id="clock_c"></div>
+    <div id="data_c"></div>
+    <h1>🌅 智能时间图片展示</h1>
+    <a href="./deepseek/Time_Check_Image.html" target="_blank">在不同的时间在同一个页面显示不同的图片</a>
+    <img id="dynamicImage" class="time-image" src="./Time_Check_Image.js" alt="动态图片">
+    <div class="info-panel">
+        <div class="time-card">
+            <div class="time-value" id="currentTime">--:--</div>
+            <div class="time-label">当前时间</div>
+        </div>
+        <div class="time-card">
+            <div class="time-value" id="timePeriod">--</div>
+            <div class="time-label">时段</div>
+        </div>
+        <div class="time-card">
+            <div class="time-value" id="currentSeason">--</div>
+            <div class="time-label">季节</div>
+        </div>
+        <div class="time-card">
+            <div class="time-value" id="currentWeekday">--</div>
+            <div class="time-label">星期</div>
+        </div>
+        <p id="imageDescription">正在加载时间信息...</p>
+    </div>
+    </div>
+    <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
+    <script src="https://flashdragons.github.io/js/clock.js"></script>
+    <script src="./Time_Check_Image.js"></script>
+</body>
+</html>
