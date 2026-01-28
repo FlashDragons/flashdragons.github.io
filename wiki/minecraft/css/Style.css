@@ -1,0 +1,11 @@
+body{
+    background: url(../assets/Images/Background_Image.jpg)fixed;
+    background-size: 100%;
+}
+.container{
+    background-color:#181a1bcc;
+    backdrop-filter: blur(5px);
+}
+.font-color{
+    color:#f0f8ff;
+}
