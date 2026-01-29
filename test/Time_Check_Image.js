@@ -9,7 +9,7 @@ const imageConfig = {
         },
         day: { 
             image: 'https://flashdragons.github.io/test/assets/Day.jpg',
-            name: '下午', 
+            name: '日间', 
             hours: [9, 10, 11, 12, 13, 14, 15, 16]
         },
         afternoon: { 
