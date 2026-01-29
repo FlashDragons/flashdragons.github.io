@@ -18,7 +18,7 @@ const imageConfig = {
             hours: [17, 18, 19]
         },
         night: { 
-            image: 'https://flashdragons.github.io/test/assets/Noon.jpg',
+            image: 'https://flashdragons.github.io/test/assets/Night.jpg',
             name: '夜晚', 
             hours: [20, 21, 22, 23, 0, 1, 2, 3, 4, 5]
         }
