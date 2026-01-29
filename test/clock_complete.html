@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <title>多功能实时时钟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .clock-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .time-display {
+            font-size: 5rem;
+            font-weight: 300;
+            color: white;
+            margin: 20px 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-variant-numeric: tabular-nums; /* 等宽数字 */
+        }
+        
+        .date-display {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .control-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timezone-select {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .timezone-select option {
+            background: #333;
+            color: white;
+        }
+        
+        .format-info {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .time-display {
+                font-size: 3rem;
+            }
+            
+            .date-display {
+                font-size: 1.3rem;
+            }
+            
+            .clock-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <h1 style="color: white; margin-bottom: 20px;">🕐 智能实时时钟</h1>
+        
+        <div class="time-display" id="timeDisplay">00:00:00</div>
+        <div class="date-display" id="dateDisplay">2024年1月1日 星期一</div>
+        
+        <div class="controls">
+            <button class="control-btn active" onclick="toggleFormat(12)">12小时制</button>
+            <button class="control-btn" onclick="toggleFormat(24)">24小时制</button>
+            <button class="control-btn" onclick="toggleSeconds()">显示/隐藏秒</button>
+            <button class="control-btn" onclick="toggleMilliseconds()">毫秒模式</button>
+        </div>
+        
+        <select class="timezone-select" id="timezoneSelect" onchange="changeTimezone()">
+            <option value="local">本地时间</option>
+            <option value="UTC">UTC 时间</option>
+            <option value="America/New_York">纽约时间</option>
+            <option value="Europe/London">伦敦时间</option>
+            <option value="Asia/Tokyo">东京时间</option>
+            <option value="Asia/Shanghai">上海时间</option>
+        </select>
+        
+        <div class="format-info" id="formatInfo">当前使用24小时制，显示秒针</div>
+    </div>
+
+    <script>
+        // 配置变量
+        let config = {
+            format24: true,           // 24小时制
+            showSeconds: true,        // 显示秒
+            showMilliseconds: false,  // 显示毫秒
+            timezone: 'local',        // 时区
+            smooth: true              // 平滑过渡
+        };
+        
+        // 初始化
+        function initClock() {
+            updateClock();
+            
+            if (config.smooth) {
+                // 平滑动画更新
+                requestAnimationFrame(smoothUpdate);
+            } else {
+                // 普通更新
+                setInterval(updateClock, config.showMilliseconds ? 10 : 1000);
+            }
+            
+            updateControls();
+        }
+        
+        // 更新时钟显示
+        function updateClock() {
+            const now = new Date();
+            let displayDate;
+            
+            // 处理时区
+            if (config.timezone === 'UTC') {
+                displayDate = new Date(now.toUTCString().replace(' GMT', ''));
+            } else if (config.timezone !== 'local') {
+                // 使用Intl API处理时区
+                displayDate = new Date(
+                    now.toLocaleString('en-US', { timeZone: config.timezone })
+                );
+            } else {
+                displayDate = now;
+            }
+            
+            // 更新时间显示
+            updateTimeDisplay(displayDate);
+            
+            // 更新日期显示
+            updateDateDisplay(displayDate);
+        }
+        
+        // 更新时间部分
+        function updateTimeDisplay(date) {
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let milliseconds = date.getMilliseconds();
+            
+            // 处理12小时制
+            let ampm = '';
+            if (!config.format24) {
+                ampm = hours >= 12 ? ' PM' : ' AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12; // 0点转为12点
+            }
+            
+            // 格式化数字
+            hours = hours.toString().padStart(2, '0');
+            minutes = minutes.toString().padStart(2, '0');
+            seconds = seconds.toString().padStart(2, '0');
+            milliseconds = milliseconds.toString().padStart(3, '0');
+            
+            // 构建时间字符串
+            let timeString;
+            if (config.showMilliseconds) {
+                timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+            } else if (config.showSeconds) {
+                timeString = `${hours}:${minutes}:${seconds}`;
+            } else {
+                timeString = `${hours}:${minutes}`;
+            }
+            
+            timeString += ampm;
+            
+            // 更新显示
+            document.getElementById('timeDisplay').textContent = timeString;
+        }
+        
+        // 更新日期部分
+        function updateDateDisplay(date) {
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                weekday: 'long'
+            };
+            
+            const dateString = date.toLocaleDateString('zh-CN', options);
+            document.getElementById('dateDisplay').textContent = dateString;
+        }
+        
+        // 平滑更新（使用requestAnimationFrame）
+        let lastUpdateTime = 0;
+        function smoothUpdate(timestamp) {
+            if (!lastUpdateTime) lastUpdateTime = timestamp;
+            
+            const interval = config.showMilliseconds ? 10 : 1000;
+            if (timestamp - lastUpdateTime >= interval) {
+                updateClock();
+                lastUpdateTime = timestamp - (timestamp % interval);
+            }
+            
+            requestAnimationFrame(smoothUpdate);
+        }
+        
+        // 控制函数
+        function toggleFormat(format) {
+            config.format24 = (format === 24);
+            updateControls();
+            updateFormatInfo();
+        }
+        
+        function toggleSeconds() {
+            config.showSeconds = !config.showSeconds;
+            if (!config.showSeconds) {
+                config.showMilliseconds = false;
+            }
+            updateControls();
+            updateFormatInfo();
+        }
+        
+        function toggleMilliseconds() {
+            config.showMilliseconds = !config.showMilliseconds;
+            if (config.showMilliseconds) {
+                config.showSeconds = true;
+            }
+            updateControls();
+            updateFormatInfo();
+        }
+        
+        function changeTimezone() {
+            config.timezone = document.getElementById('timezoneSelect').value;
+            updateFormatInfo();
+        }
+        
+        // 更新控制按钮状态
+        function updateControls() {
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 激活当前选中的按钮
+            const formatBtn = config.format24 
+                ? document.querySelector('button[onclick*="24"]')
+                : document.querySelector('button[onclick*="12"]');
+            formatBtn.classList.add('active');
+            
+            if (!config.showSeconds) {
+                document.querySelector('button[onclick*="秒"]').textContent = '显示秒';
+            } else {
+                document.querySelector('button[onclick*="秒"]').textContent = '隐藏秒';
+                if (config.showMilliseconds) {
+                    document.querySelector('button[onclick*="毫秒"]').textContent = '隐藏毫秒';
+                } else {
+                    document.querySelector('button[onclick*="毫秒"]').textContent = '显示毫秒';
+                }
+            }
+        }
+        
+        // 更新格式信息
+        function updateFormatInfo() {
+            let info = '当前使用';
+            info += config.format24 ? '24小时制' : '12小时制';
+            info += config.showSeconds ? '，显示秒' : '，不显示秒';
+            info += config.showMilliseconds ? '，显示毫秒' : '';
+            info += '，时区：' + getTimezoneName(config.timezone);
+            
+            document.getElementById('formatInfo').textContent = info;
+        }
+        
+        function getTimezoneName(tz) {
+            const names = {
+                'local': '本地时间',
+                'UTC': 'UTC时间',
+                'America/New_York': '纽约时间',
+                'Europe/London': '伦敦时间',
+                'Asia/Tokyo': '东京时间',
+                'Asia/Shanghai': '上海时间'
+            };
+            return names[tz] || tz;
+        }
+        
+        // 添加数字时钟动画
+        function addDigitAnimation() {
+            const timeDisplay = document.getElementById('timeDisplay');
+            const observer = new MutationObserver(() => {
+                timeDisplay.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    timeDisplay.style.transform = 'scale(1)';
+                }, 100);
+            });
+            observer.observe(timeDisplay, { childList: true });
+        }
+        
+        // 页面加载完成后初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            initClock();
+            addDigitAnimation();
+            updateFormatInfo();
+        });
+        
+        // 添加页面可见性监听（优化性能）
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // 页面隐藏时停止更新
+                if (window.clockInterval) {
+                    clearInterval(window.clockInterval);
+                }
+            } else {
+                // 页面显示时恢复更新
+                initClock();
+            }
+        });
+    </script>
+</body>
+</html>
