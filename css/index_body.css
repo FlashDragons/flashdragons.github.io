@@ -1,11 +1,23 @@
 .container{
-            background-color:#342a1fcc;
+            background-color:#2a2219cc;
             backdrop-filter: blur(5px);
 }
 body{
     background: url(../assets/pics/bg_mc.jpg)fixed;
     background-size: 100%;
-    -webkit-text-fill-color: aliceblue;
+    color:#c2e4ff;
+}
+a:link{
+    color: #0d6efd;/*未访问*/
+}
+a:visited{
+    color: purple;/*已访问*/
+}
+a:hover{
+    color: #f73809;/*鼠标悬停时*/
+}
+a:active{
+    color: orange;/*被点击瞬间*/
 }
 .site-footer{
     background-color: darkgreen;
