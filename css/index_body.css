@@ -1,0 +1,13 @@
+.container{
+            background-color:#342a1fcc;
+            backdrop-filter: blur(5px);
+}
+body{
+    background: url(../assets/pics/bg_mc.jpg)fixed;
+    background-size: 100%;
+    -webkit-text-fill-color: aliceblue;
+}
+.site-footer{
+    background-color: darkgreen;
+    color:aliceblue;
+}
