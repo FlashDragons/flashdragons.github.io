@@ -3,7 +3,7 @@
             backdrop-filter: blur(5px);
 }
 body{
-    background: url(../assets/pics/bg_mc.jpg)fixed;
+    background: url(https://flashdragons.github.io/assets/pics/bg_mc.jpg)fixed;
     background-size: 100%;
     color:#c2e4ff;
 }
