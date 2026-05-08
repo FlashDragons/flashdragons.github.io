@@ -11,13 +11,13 @@ a:link{
     color: #0d6efd;/*未访问*/
 }
 a:visited{
-    color: purple;/*已访问*/
+    color: #ff72ff;/*已访问*/
 }
 a:hover{
     color: #f73809;/*鼠标悬停时*/
 }
 a:active{
-    color: orange;/*被点击瞬间*/
+    color: darkorange;/*被点击瞬间*/
 }
 .site-footer{
     background-color: darkgreen;
