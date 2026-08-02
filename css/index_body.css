@@ -39,7 +39,7 @@
 .fd-text-light { color: var(--fd-color-light); }
 
 .container{
-            background-color:var(--fd-color-background);
+            background-color: var(--fd-color-background);
             backdrop-filter: blur(5px);
 }
 body{
@@ -61,5 +61,5 @@ a:active{
 }
 .site-footer{
     background-color: var(--fd-color-bottom);
-    color: var(--fd-color-blue);
+    color: var(--fd-color-auxiliary);
 }
