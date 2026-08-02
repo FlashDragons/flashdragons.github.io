@@ -1,14 +1,15 @@
 @font-face { /* 定义字体 */
     font-family: 'LXGW WenKai GB';
-    src: url("https://flashdragons.github.io/assets/LXGWWenKaiGB-Medium.ttf")
-    format('ttf');
-    font-weight: 300;
+    src: url("https://flashdragons.github.io/assets/LXGWWenKaiGB-Medium.woff2")
+    format("woff2");
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 body {/* 应用字体 */
-    font-family: 'LXGW WenKai GB', 'Microsoft YaHei', sans-serif;
+    font-family: 'LXGW WenKai GB',
+    'Microsoft YaHei',
+    sans-serif;
     font-size: 16px;
     line-height: 1.6;
 }
-
