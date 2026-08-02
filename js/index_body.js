@@ -1,12 +1,12 @@
 const images = [
-    "https://flashdragons.github.io/assets/pics/background-1.jpg",
-    "https://flashdragons.github.io/assets/pics/background-2.jpg",
-    "https://flashdragons.github.io/assets/pics/background-3.jpg",
-    "https://flashdragons.github.io/assets/pics/background-4.jpg",
-    "https://flashdragons.github.io/assets/pics/background-5.jpg",
-    "https://flashdragons.github.io/assets/pics/background-6.jpg",
-    "https://flashdragons.github.io/assets/pics/background-7.jpg",
-    "https://flashdragons.github.io/assets/pics/background-8.jpg"
+    "https://flashdragons.github.io/assets/pics/background-1.webp",
+    "https://flashdragons.github.io/assets/pics/background-2.webp",
+    "https://flashdragons.github.io/assets/pics/background-3.webp",
+    "https://flashdragons.github.io/assets/pics/background-4.webp",
+    "https://flashdragons.github.io/assets/pics/background-5.webp",
+    "https://flashdragons.github.io/assets/pics/background-6.webp",
+    "https://flashdragons.github.io/assets/pics/background-7.webp",
+    "https://flashdragons.github.io/assets/pics/background-8.webp"
 ];
 
 const slides = document.querySelectorAll(".background-slide");
