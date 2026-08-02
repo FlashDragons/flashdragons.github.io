@@ -1,14 +1,54 @@
+/*网络推荐的颜色配置：
+背景：#050505
+面板：#1a2335
+主文字：#e8edf7
+辅助文字：#91a0b7
+强调色：#2997ff
+分割线：#324055*/
+/* 使用变量统一管理颜色 */
+:root {
+    --fd-color-bottom: #050505;
+    --fd-color-background: #1a2335cc;
+    --fd-color-main: #e8edf7;
+    --fd-color-auxiliary: #91a0b7;
+    --fd-color-important: #2997ff;
+    --fd-color-red: #dc3545;
+    --fd-color-orange: #fd7e14;
+    --fd-color-yellow: #ffc107;
+    --fd-color-green: #198754;
+    --fd-color-blue: #0d6efd;
+    --fd-color-purple: #6f42c1;
+    --fd-color-gray: #6c757d;
+    --fd-color-dark: #212529;
+    --fd-color-light: #f8f9fa;
+}
+/* 文字颜色工具类 */
+.fd-text-bottom { color: var(--fd-color-bottom); }
+.fd-text-background { color: var(--fd-color-background); }
+.fd-text-main { color: var(--fd-color-main); }
+.fd-text-auxiliary { color: var(--fd-color-auxiliary); }
+.fd-text-important { color: var(--fd-color-important); font-weight: 600;}
+.fd-text-red { color: var(--fd-color-red); }
+.fd-text-orange { color: var(--fd-color-orange); }
+.fd-text-yellow { color: var(--fd-color-yellow); }
+.fd-text-green { color: var(--fd-color-green); }
+.fd-text-blue { color: var(--fd-color-blue); }
+.fd-text-purple { color: var(--fd-color-purple); }
+.fd-text-gray { color: var(--fd-color-gray); }
+.fd-text-dark { color: var(--fd-color-dark); }
+.fd-text-light { color: var(--fd-color-light); }
+
 .container{
-            background-color:#2a2219cc;
+            background-color:var(--fd-color-background);
             backdrop-filter: blur(5px);
 }
 body{
     background: url(https://flashdragons.github.io/assets/pics/bg_mc.jpg)fixed;
     background-size: 100%;
-    color:#c2e4ff;
+    color: var(--fd-color-main);
 }
 a:link{
-    color: #0d6efd;/*未访问*/
+    color: var(--fd-color-blue);/*未访问*/
 }
 a:visited{
     color: #ff72ff;/*已访问*/
@@ -20,6 +60,6 @@ a:active{
     color: darkorange;/*被点击瞬间*/
 }
 .site-footer{
-    background-color: darkgreen;
-    color:aliceblue;
+    background-color: var(--fd-color-bottom);
+    color: var(--fd-color-blue);
 }
