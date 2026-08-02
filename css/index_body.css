@@ -9,6 +9,7 @@
 :root {
     --fd-color-bottom: #050505;
     --fd-color-background: #1a2335cc;
+    --fd-color-bar: #363a3d;
     --fd-color-main: #e8edf7;
     --fd-color-auxiliary: #91a0b7;
     --fd-color-important: #2997ff;
@@ -25,6 +26,7 @@
 /* 文字颜色工具类 */
 .fd-text-bottom { color: var(--fd-color-bottom); }
 .fd-text-background { color: var(--fd-color-background); }
+.fd-text-bar { color: var(--fd-color-bar); }
 .fd-text-main { color: var(--fd-color-main); }
 .fd-text-auxiliary { color: var(--fd-color-auxiliary); }
 .fd-text-important { color: var(--fd-color-important); font-weight: 600;}
@@ -87,10 +89,10 @@ a:active{
     color: darkorange;/*被点击瞬间*/
 }
 .header{
-    background-color: var(--fd-color-bottom);
+    background-color: var(--fd-color-bar);
     color: var(--fd-color-auxiliary);
 }
 .footer{
-    background-color: var(--fd-color-bottom);
+    background-color: var(--fd-color-bar);
     color: var(--fd-color-auxiliary);
 }
