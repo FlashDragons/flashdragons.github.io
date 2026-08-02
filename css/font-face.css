@@ -1,6 +1,7 @@
 @font-face { /* 定义字体 */
     font-family: 'LXGW WenKai GB';
-    src: url('https://cdn.jsdelivr.net/gh/lxgw/LxgwWenkaiGB@main/fonts/LXGWWenKaiGB-Medium.ttf') format('truetype');
+    src: url("https://flashdragons.github.io/assets/LXGWWenKaiGB-Medium.ttf")
+    format('ttf');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
