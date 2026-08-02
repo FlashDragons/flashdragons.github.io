@@ -43,10 +43,37 @@
             backdrop-filter: blur(5px);
 }
 body{
-    background: url(https://flashdragons.github.io/assets/pics/bg_mc.jpg)fixed;
+    /*background: url(https://flashdragons.github.io/assets/pics/bg_mc.jpg)fixed;这是老背景图代码*/
     background-size: 100%;
     color: var(--fd-color-main);
 }
+
+/*动态背景样式*/
+.background-slider {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--fd-color-dark);
+}
+.background-slide {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    transform: scale(1.03);
+    transition:
+    opacity 1.5s ease-in-out,
+    transform 6s linear;
+}
+.background-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
 a:link{
     color: var(--fd-color-blue);/*未访问*/
 }
@@ -59,7 +86,11 @@ a:hover{
 a:active{
     color: darkorange;/*被点击瞬间*/
 }
-.site-footer{
+.header{
+    background-color: var(--fd-color-bottom);
+    color: var(--fd-color-auxiliary);
+}
+.footer{
     background-color: var(--fd-color-bottom);
     color: var(--fd-color-auxiliary);
 }
