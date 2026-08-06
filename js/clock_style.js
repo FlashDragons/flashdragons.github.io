@@ -85,16 +85,25 @@ function updateTimeDisplay(date) {
 
 // 更新日期部分
 function updateDateDisplay(date) {
-    const options = { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        weekday: 'long'
-    };
-    
-    const dateString = date.toLocaleDateString('zh-CN', options);
+    const pageLanguage = document.documentElement.lang.toLowerCase();
+    const year = date.getFullYear();
+    const day = date.getDate();
+    let dateString;
+
+    if (pageLanguage === 'zh-hant' || pageLanguage.startsWith('zh-tw') || pageLanguage.startsWith('zh-hk')) {
+        const weekday = date.toLocaleDateString('zh-Hant', { weekday: 'long' });
+        dateString = `${year}年${date.getMonth() + 1}月${day}日 ${weekday}`;
+    } else if (pageLanguage === 'zh-hans' || pageLanguage.startsWith('zh-cn') || pageLanguage.startsWith('zh-sg')) {
+        const weekday = date.toLocaleDateString('zh-Hans', { weekday: 'long' });
+        dateString = `${year}年${date.getMonth() + 1}月${day}日 ${weekday}`;
+    } else {
+        const month = date.toLocaleDateString('en-US', { month: 'long' });
+        const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+        dateString = `${year} ${month} ${day}, ${weekday}`;
+    }
+
     document.getElementById('dateDisplay').textContent = dateString;
-        }
+}
 
 // 平滑更新（使用requestAnimationFrame）
 let lastUpdateTime = 0;
