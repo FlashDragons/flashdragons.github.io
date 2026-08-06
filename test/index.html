@@ -7,22 +7,54 @@
     <link rel="icon" type="image/x-icon" href="https://flashdragons.github.io/assets/icon.ico" />
     <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
 </head>
 <body>
+    <div class="background-slider" aria-hidden="true"><!-- 背景轮播 -->
+        <div class="background-slide is-active"></div>
+        <div class="background-slide"></div>
+    </div>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row row-show">
+                <div class="col-lg-6 col-md-6 text-base"><img src="https://flashdragons.github.io/assets/icon.ico" alt="Icon" class="img-fluid" width="20"> Other test page</div>
+                <div class="col-lg-6 col-md-6 text-end">Test index page.</div>
+            </div>
+            <div class="text-end">
+                <div class="d-inline-block border border-secondary rounded p-3 bg-dark text-end">
+                    <span class="clock-display" id="timeDisplay">00:00:00</span> | 
+                    <span class="clock-display" id="dateDisplay">2026年8月6日 星期四</span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <h1>Welcome!</h1>
         <p>There are some test pages here:</p>
         <ul>
-            <li><a href="vscode.html" target="_blank">Test Page for VSCode Style Preview</a></li>
-            <li><a href="introduction.html" target="_blank">An introduction to My Minecraft Skin</a></li>
-            <li><a href="link.html" target="_blank">A test page of links</a></li>
-            <li><a href="iframe.html" target="_blank">An iframe test page</a></li>
-            <li><a href="character.html" target="_blank">A character test page</a></li>
-            <li><a href="bootstrap.html" target="_blank">A bootstrap test</a></li>
-            <li><a href="lorem.html" target="_blank">Lorem Container</a></li>
-            <li><a href="clock.html" target="_blank">A clock test</a></li>
-            <li><a href="clock_complete.html" target="_blank">A complete clock</a></li>
+            <a href="vscode.html" target="_blank"><button class="btn btn-outline-primary">Test Page for VSCode Style Preview</button></a>
+            <a href="introduction.html" target="_blank"><button class="btn btn-outline-primary">An introduction to My Minecraft Skin</button></a>
+            <a href="link.html" target="_blank"><button class="btn btn-outline-primary">A test page of links</button></a>
+            <a href="iframe.html" target="_blank"><button class="btn btn-outline-primary">An iframe test page</button></a>
+            <a href="character.html" target="_blank"><button class="btn btn-outline-primary">A character test page</button></a>
+            <a href="bootstrap.html" target="_blank"><button class="btn btn-outline-primary">A bootstrap test</button></a>
+            <a href="lorem.html" target="_blank"><button class="btn btn-outline-primary">Lorem Container</button></a>
+            <a href="clock.html" target="_blank"><button class="btn btn-outline-primary">A clock test</button></a>
+            <a href="clock_complete.html" target="_blank"><button class="btn btn-outline-primary">A complete clock</button></a>
+            <a href="other_test.html" target="_blank"><button class="btn btn-outline-primary">Other test page</button></a>
         </ul>
+        <div>More...</div>
     </div>
+    <footer class="footer"> <!-- 页脚 -->
+        <div class="container-fluid">
+            <div class="row row-show">
+                <div class="col-lg-6 col-md-6 text-base">&copy; 2026 My own website, all rights reserved.</div>
+                <div class="col-lg-6 col-md-6 text-end">&radic; The Safi'jiiva and Xeno'jiiva background image comes from <a href="https://x.com/GemRune_/status/1826915533234872716" target="_blank">X</a> and was created by <a href="https://x.com/Gemrune_" target="_blank">でぃあ</a>. This site has obtained <a href="https://flashdragons.github.io/assets/pics/right.webp" target="_blank">permission</a> to use it.</div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://flashdragons.github.io/js/index_body.js"></script>
+    <script src="https://flashdragons.github.io/js/clock_style.js"></script>
     <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
 </html>

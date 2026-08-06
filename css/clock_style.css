@@ -1,0 +1,7 @@
+.dlock-display {
+    color: var(--fd-text-main);
+    font-size: 1.8rem;
+    margin: 20px 0;
+    font-variant-numeric: tabular-nums; /* 等宽数字 */
+    margin-bottom: 30px;
+}
