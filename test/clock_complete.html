@@ -123,10 +123,10 @@
         <div class="date-display" id="dateDisplay">2024年1月1日 星期一</div>
         
         <div class="controls">
-            <button class="control-btn active" onclick="toggleFormat(12)">12小时制</button>
-            <button class="control-btn" onclick="toggleFormat(24)">24小时制</button>
-            <button class="control-btn" onclick="toggleSeconds()">显示/隐藏秒</button>
-            <button class="control-btn" onclick="toggleMilliseconds()">毫秒模式</button>
+            <button type="button" class="control-btn active" onclick="toggleFormat(12)">12小时制</button>
+            <button type="button" class="control-btn" onclick="toggleFormat(24)">24小时制</button>
+            <button type="button" class="control-btn" onclick="toggleSeconds()">显示/隐藏秒</button>
+            <button type="button" class="control-btn" onclick="toggleMilliseconds()">毫秒模式</button>
         </div>
         
         <select class="timezone-select" id="timezoneSelect" onchange="changeTimezone()">
