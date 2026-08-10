@@ -1,0 +1,14 @@
+.time-display {
+    font-size: 5rem;
+    font-weight: 300;
+    color: white;
+    margin: 20px 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-variant-numeric: tabular-nums; /* 等宽数字 */
+}
+        
+.date-display {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}

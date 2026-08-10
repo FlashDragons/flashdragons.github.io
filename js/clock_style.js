@@ -151,21 +151,16 @@ function changeTimezone() {
 
 // 更新控制按钮状态
 function updateControls() {
-    document.querySelectorAll('.control-btn').forEach(btn => {
-        btn.classList.remove('active');
+    document.querySelectorAll('[data-clock-format]').forEach(btn => {
+        const isActive = Number(btn.dataset.clockFormat) === (config.format24 ? 24 : 12);
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
     });
 
-    // 激活当前选中的按钮
-    const formatBtn = config.format24 
-        ? document.querySelector('button[onclick*="24"]')
-        : document.querySelector('button[onclick*="12"]');
-        formatBtn.classList.add('active');
-
-    if (!config.showSeconds) {
-        document.querySelector('button[onclick*="秒"]').textContent = '显示秒';
-    } else {
-        document.querySelector('button[onclick*="秒"]').textContent = '隐藏秒';
-    }
+    document.querySelectorAll('[data-clock-seconds]').forEach(btn => {
+        btn.classList.toggle('active', config.showSeconds);
+        btn.setAttribute('aria-pressed', String(config.showSeconds));
+    });
 }
 
 // 更新格式信息
@@ -175,7 +170,10 @@ function updateFormatInfo() {
     info += config.showSeconds ? '，显示秒' : '，不显示秒';
     info += '，时区：' + getTimezoneName(config.timezone);
     
-    document.getElementById('formatInfo').textContent = info;
+    const formatInfo = document.getElementById('formatInfo');
+    if (formatInfo) {
+        formatInfo.textContent = info;
+    }
 }
 
 // 添加数字时钟动画
