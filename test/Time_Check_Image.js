@@ -18,7 +18,7 @@ const imageConfig = {
             hours: [17, 18, 19]
         },
         night: { 
-            image: 'https://flashdragons.github.io/test/assets/Night.jpg',
+            image: 'https://flashdragons.github.io/assets/pics/background-3.webp',
             name: '夜晚', 
             hours: [20, 21, 22, 23, 0, 1, 2, 3, 4, 5]
         }
@@ -41,7 +41,7 @@ const imageConfig = {
             months: [9, 10, 11]
         },
         winter: { 
-            image: 'https://flashdragons.github.io/test/assets/Noon.jpg',
+            image: 'https://flashdragons.github.io/assets/pics/background-3.webp',
             name: '冬季',
             months: [12, 1, 2]
         }
@@ -116,6 +116,6 @@ updatePage();
 setInterval(updatePage, 60000);
 // 添加图片加载错误处理
 document.getElementById('dynamicImage').onerror = function() {
-    this.src = 'https://flashdragons.github.io/test/assets/Safijiiva+Xenojiiva.jpg';
+    this.src = 'https://flashdragons.github.io/assets/pics/background-2.webp';
     this.alt = '默认图片';
 };
