@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap中的 &lt;hr&gt; 样式</title>
+    <link rel="icon" type="x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
+</head>
+<body>
+    <div class="background-slider" aria-hidden="true">
+        <div class="background-slide is-active"></div>
+        <div class="background-slide"></div>
+    </div>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row row-show">
+                <div class="col-lg-6 col-md-6 text-base"><img src="https://flashdragons.github.io/assets/icon.ico" alt="图标" class="img-fluid" width="20"> Bootstrap中的 &lt;hr&gt; 样式</div>
+                <div class="col-lg-6 col-md-6 text-end">
+                    <div class="d-inline-block border border-secondary rounded p-3 bg-dark text-end">
+                        <span class="clock-display" id="timeDisplay">00:00:00</span> |
+                        <span class="clock-display" id="dateDisplay">2026年8月6日 星期四</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <div id="bootstrap-hr-gallery">
+  <style>
+    #bootstrap-hr-gallery { color: var(--foreground); }
+    #bootstrap-hr-gallery .hr-list { display: grid; gap: 1.25rem; }
+    #bootstrap-hr-gallery .hr-item { display: grid; grid-template-columns: minmax(150px, .7fr) minmax(220px, 1.5fr); gap: 1rem; align-items: center; }
+    #bootstrap-hr-gallery .label { min-width: 0; }
+    #bootstrap-hr-gallery .label code { display: block; overflow-wrap: anywhere; }
+    #bootstrap-hr-gallery hr { margin: 1rem 0; color: inherit; border: 0; border-top: 1px solid; opacity: .25; }
+    #bootstrap-hr-gallery .opacity-50 { opacity: .5; }
+    #bootstrap-hr-gallery .opacity-75 { opacity: .75; }
+    #bootstrap-hr-gallery .opacity-100 { opacity: 1; }
+    #bootstrap-hr-gallery .border-2 { border-width: 2px; }
+    #bootstrap-hr-gallery .border-3 { border-width: 3px; }
+    #bootstrap-hr-gallery .border-4 { border-width: 4px; }
+    #bootstrap-hr-gallery .border-primary { border-color: var(--blue); }
+    #bootstrap-hr-gallery .border-success { border-color: var(--green); }
+    #bootstrap-hr-gallery .border-danger { border-color: var(--red); }
+    #bootstrap-hr-gallery .border-warning { border-color: var(--yellow); }
+    #bootstrap-hr-gallery .my-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    #bootstrap-hr-gallery .compact { margin-top: .25rem; margin-bottom: .25rem; }
+    #bootstrap-hr-gallery .sample { min-width: 0; }
+    #bootstrap-hr-gallery .spacing-box { border-inline-start: 2px solid var(--border); padding-inline-start: .75rem; }
+    @media (max-width: 560px) {
+      #bootstrap-hr-gallery .hr-item { grid-template-columns: 1fr; gap: .25rem; }
+    }
+  </style>
+  <h2>Bootstrap 5.3.8 的 &lt;hr&gt; 样式</h2>
+  <div class="hr-list" aria-label="Bootstrap horizontal rule examples">
+    <div class="hr-item">
+      <div class="label"><strong>默认</strong><code>&lt;hr&gt;</code></div>
+      <div class="sample"><hr></div>
+    </div>
+    <div class="hr-item">
+      <div class="label"><strong>不透明度</strong><code>opacity-50 / 75 / 100</code></div>
+      <div class="sample"><hr class="opacity-50"><hr class="opacity-75"><hr class="opacity-100"></div>
+    </div>
+    <div class="hr-item">
+      <div class="label"><strong>粗细</strong><code>border-2 / 3 / 4</code></div>
+      <div class="sample"><hr class="border-2 opacity-100"><hr class="border-3 opacity-100"><hr class="border-4 opacity-100"></div>
+    </div>
+    <div class="hr-item">
+      <div class="label"><strong>主题颜色</strong><code>border-primary / success / danger / warning</code></div>
+      <div class="sample"><hr class="border-primary opacity-100"><hr class="border-success opacity-100"><hr class="border-danger opacity-100"><hr class="border-warning opacity-100"></div>
+    </div>
+    <div class="hr-item">
+      <div class="label"><strong>颜色 + 粗细</strong><code>border-primary border-3 opacity-75</code></div>
+      <div class="sample"><hr class="border-primary border-3 opacity-75"></div>
+    </div>
+    <div class="hr-item">
+      <div class="label"><strong>扩大间距</strong><code>my-4</code></div>
+      <div class="sample spacing-box"><span class="text-small text-muted">上方内容</span><hr class="my-4"><span class="text-small text-muted">下方内容</span></div>
+    </div>
+    <div class="hr-item">
+      <div class="label"><strong>紧凑间距</strong><code>my-1</code></div>
+      <div class="sample spacing-box"><span class="text-small text-muted">上方内容</span><hr class="compact"><span class="text-small text-muted">下方内容</span></div>
+    </div>
+  </div>
+</div>
+</div>
+<footer class="footer"> <!-- 页脚 -->
+        <div class="container-fluid">
+            <div class="row row-show">
+                <div class="col-lg-6 col-md-6 text-base">&copy; 2026 我的网站，保留所有权利。</div>
+                <div class="col-lg-6 col-md-6 text-end">&radic; 冥赤龙和冥灯龙背景图来源于<a href="https://x.com/GemRune_/status/1826915533234872716" target="_blank">X</a>，作者是<a href="https://x.com/Gemrune_" target="_blank">でぃあ</a>，本站已获得<a href="https://flashdragons.github.io/assets/pics/right.webp" target="_blank">使用权</a>。</div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://flashdragons.github.io/js/index_body.js"></script>
+    <script src="https://flashdragons.github.io/js/clock_style.js"></script>
+    <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
