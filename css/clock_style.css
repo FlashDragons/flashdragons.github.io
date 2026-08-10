@@ -1,7 +1,11 @@
-.clock-display {
-    color: var(--fd-text-main);
-    font-size: 1.8rem;
-    margin: 20px 0;
+.time-display {
+    font-family: 'Microsoft YaHei';
+    font-size: 3rem;
     font-variant-numeric: tabular-nums; /* 等宽数字 */
-    margin-bottom: 30px;
+    color: var(--fd-text-main);
+    margin: 10px 0;
+}
+.date-display {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }

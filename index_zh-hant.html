@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
-    <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style-preview.css">
 </head>
 <body>
     <div class="background-slider" aria-hidden="true">
@@ -22,17 +22,16 @@
                 <div class="col-lg-6 col-md-6 text-end">
                     <a href="index_en-us.html"><button class="btn btn-outline-warning">English</button></a>
                     <a href="index_zh-hans.html"><button class="btn btn-outline-warning">简体中文</button></a>
-                    <div class="d-inline-block border border-secondary rounded p-3 bg-dark text-end">
-                        <span class="clock-display" id="timeDisplay">00:00:00</span> |
-                        <span class="clock-display" id="dateDisplay">2026年8月6日 星期四</span>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
         <h1 class="text-center">歡迎來到FlashDragon在互聯網上的家！</h1>
-        <div>你好世界！</div>
+        <hr class="border-primary border-3 opacity-75">
+        <div class="row row-show">
+            <div class="col-lg-8 col-md-7">
+                <div class="d-block border border-primary rounded p-3 bg-gradient">
         <div class="fd-text-orange">這些是我的更多賬號：</div>
         <ul>
             <p>
@@ -57,6 +56,21 @@
         <div>我在這裏保存了一些網絡論壇的頁面：<a href="bbs/index_zh-hant.html" target="_blank">網絡論壇檔案館</a>。</div>
         <div>我的網站上有一些測試頁面：<a href="../test/index.html" target="_blank">一個歡迎頁面</a>。</div>
         <div>實際上，我仍然在學習如何寫網站。希望我可以很快提高技能。</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <div class="d-block border border-primary rounded p-3 bg-gradient text-center">
+                    <h3>本地時間</h3>
+                    <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
+                        <div class="time-display" id="timeDisplay">00:00:00</div>
+                        <div class="date-display" id="dateDisplay">2026年8月6日 星期四</div>
+                        <button type="button" class="btn btn-outline-primary control-btn" data-clock-format="12" aria-pressed="false" onclick="toggleFormat(12)">12小時制</button>
+                        <button type="button" class="btn btn-outline-primary control-btn active" data-clock-format="24" aria-pressed="true" onclick="toggleFormat(24)">24小時制</button>
+                        <button type="button" class="btn btn-outline-primary control-btn active" data-clock-seconds aria-pressed="true" onclick="toggleSeconds()">顯示/隱藏秒</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer class="footer"> <!-- 页脚 -->
         <div class="container-fluid">

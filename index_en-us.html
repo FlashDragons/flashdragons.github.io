@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
-    <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style-preview.css">
 </head>
 <body>
     <div class="background-slider" aria-hidden="true">
@@ -22,17 +22,16 @@
                 <div class="col-lg-6 col-md-6 text-end">
                     <a href="index_zh-hans.html"><button class="btn btn-outline-warning">简体中文</button></a>
                     <a href="index_zh-hant.html"><button class="btn btn-outline-warning">繁體中文</button></a>
-                    <div class="d-inline-block border border-secondary rounded p-3 bg-dark text-end">
-                    <span class="clock-display" id="timeDisplay">00:00:00</span> | 
-                    <span class="clock-display" id="dateDisplay">2026 August 6, Thursday</span>
-                </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <h1 class="text-center">Welcome to FlashDragon's home on the Internet!</h1>
-        <div>Hello World!</div>
+        <h1 class="text-center">Welcome to my home on the Internet!</h1>
+        <hr class="border-primary border-3 opacity-75">
+        <div class="row row-show">
+            <div class="col-lg-8 col-md-7">
+                <div class="d-block border border-primary rounded p-3 bg-gradient">
         <div class="fd-text-orange">Here are my more accounts:</div>
         <ul>
             <p>
@@ -57,6 +56,21 @@
         <div>I have archived some forums' pages here: <a href="bbs/index_en-us.html" target="_blank">Internet Forums archive</a>.</div>
         <div>There are some test pages on my website: <a href="../test/index.html" target="_blank">A welcome page</a>.</div>
         <div>Actually, I'm still learning how to write websites. And wishing to improve my skills soon.</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <div class="d-block border border-primary rounded p-3 bg-gradient text-center">
+                    <h3>Local Time</h3>
+                    <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
+                        <div class="time-display" id="timeDisplay">00:00:00</div>
+                        <div class="date-display" id="dateDisplay">2026 August 6, Thursday</div>
+                        <button type="button" class="btn btn-outline-primary control-btn" data-clock-format="12" aria-pressed="false" onclick="toggleFormat(12)">12H</button>
+                        <button type="button" class="btn btn-outline-primary control-btn active" data-clock-format="24" aria-pressed="true" onclick="toggleFormat(24)">24H</button>
+                        <button type="button" class="btn btn-outline-primary control-btn active" data-clock-seconds aria-pressed="true" onclick="toggleSeconds()">Show/Hide Seconds</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer class="footer"> <!-- 页脚 -->
         <div class="container-fluid">

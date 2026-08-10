@@ -177,21 +177,20 @@ function updateFormatInfo() {
 }
 
 // 添加数字时钟动画
-function addDigitAnimation() {
-    const timeDisplay = document.getElementById('timeDisplay');
-    const observer = new MutationObserver(() => {
-        timeDisplay.style.transform = 'scale(1.05)';
-        setTimeout(() => {
-            timeDisplay.style.transform = 'scale(1)';
-        }, 100);
-    });
-    observer.observe(timeDisplay, { childList: true });
-}
+//function addDigitAnimation() {
+//    const timeDisplay = document.getElementById('timeDisplay');
+//    const observer = new MutationObserver(() => {
+//        timeDisplay.style.transform = 'scale(1.05)';
+//        setTimeout(() => {
+//            timeDisplay.style.transform = 'scale(1)';
+//        }, 100);
+//    });
+//    observer.observe(timeDisplay, { childList: true });
+//}
 
 // 页面加载完成后初始化
 window.addEventListener('DOMContentLoaded', () => {
     initClock();
-    addDigitAnimation();
     updateFormatInfo();
 });
 
