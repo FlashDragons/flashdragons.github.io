@@ -71,6 +71,46 @@
                 </div>
             </div>
         </div>
+        <div class="row row-show">
+            <div class="col-lg-6 col-md-6">
+                <div class="d-block border border-primary rounded p-3 bg-gradient">
+                    minecraft
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="d-block border border-primary rounded p-3 bg-gradient">
+                    <a id="profile-link-avatar" href="#" target="_blank" rel="noopener">
+                        <img id="avatar" class="avatar" alt="Steam avatar">
+                    </a>
+                    <div>
+                        <h1><a id="profile-name" href="#" target="_blank" rel="noopener"></a></h1>
+                        <p>Steam library showcase · top games by total playtime</p>
+                    </div>
+                    <dl>
+                        <div><dt>Owned games</dt><dd id="owned">—</dd></div>
+                        <div><dt>Played games</dt><dd id="played">—</dd></div>
+                        <div><dt>Hours on record</dt><dd id="hours">—</dd></div>
+                        <div><dt>Average playtime</dt><dd id="average">—</dd></div>
+                    </dl>
+                    <section aria-labelledby="library-heading">
+                        <div class="row row-show" id="library-heading">
+                            <div class="col-9">
+                                <h4>Most played games</h4>
+                            </div>
+                            <div class="col-3 text-end">
+                                <div class="text-secondary">Top 6</div>
+                            </div>
+                        </div>
+                        <div id="games" class="games"></div>
+                        <div class="text-secondary">
+                            Updated <time id="updated">when the scheduled sync runs</time> ·
+                            Data calculated from the <a href="https://steamdb.info/calculator/76561199654646467/" target="_blank" rel="noopener">SteamDB profile</a>
+                            using the official Steam Web API.
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
     </div>
     <footer class="footer"> <!-- 页脚 -->
         <div class="container-fluid">
@@ -90,5 +130,6 @@
     <script src="https://flashdragons.github.io/js/index_body.js"></script>
     <script src="https://flashdragons.github.io/js/clock_style.js"></script>
     <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
+    <script src="https://flashdragons.github.io/js/steam_data.js"></script>
 </body>
 </html>
