@@ -64,7 +64,7 @@ const data = {
         owned: ownedResult.response.game_count ?? ownedGames.length,
         played: playedGames.length,
         hours: round(hours),
-        average: round(hours / playedGames.length)
+        average: playedGames.length ? round(hours / playedGames.length) : 0
     },
     games: topGames
 };
@@ -72,6 +72,10 @@ const data = {
 const html = await fs.readFile(outputPath, 'utf8');
 const replacement = `<!-- STEAM_DATA_START -->\n    <script id="steam-data" type="application/json">\n${JSON.stringify(data, null, 2).split('\n').map((line) => `    ${line}`).join('\n')}\n    </script>\n    <!-- STEAM_DATA_END -->`;
 const updatedHtml = html.replace(/<!-- STEAM_DATA_START -->[\s\S]*?<!-- STEAM_DATA_END -->/, replacement);
+
+if (updatedHtml === html && !html.includes('<!-- STEAM_DATA_START -->')) {
+    throw new Error(`Steam data markers are missing from ${outputPath}.`);
+}
 
 if (updatedHtml === html) {
     console.log('Steam data is already current.');

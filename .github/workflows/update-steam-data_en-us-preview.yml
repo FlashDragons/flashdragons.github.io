@@ -22,11 +22,11 @@ jobs:
       - name: Update Steam data
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
-        run: node js//update-steam-data_en-us-preview.mjs
+        run: node js/update-steam-data_en-us.mjs
 
       - name: Commit changed data
         run: |
-          if git diff --quiet -- index_en-us.html; then
+          if git diff --quiet -- index_en-us-preview.html; then
             echo "Steam data did not change."
             exit 0
           fi

@@ -1,4 +1,10 @@
-const data = JSON.parse(document.getElementById('steam-data').textContent);
+const steamDataElement = document.getElementById('steam-data');
+
+if (!steamDataElement) {
+    throw new Error('Steam card data is missing from the page.');
+}
+
+const data = JSON.parse(steamDataElement.textContent);
 const formatNumber = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
 const profileLinks = [document.getElementById('profile-link-avatar'), document.getElementById('profile-name')];
 

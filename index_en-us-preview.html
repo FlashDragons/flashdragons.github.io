@@ -9,8 +9,30 @@
     <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/steam-card.css">
 </head>
 <body>
+    <!-- STEAM_DATA_START -->
+    <script id="steam-data" type="application/json">
+    {
+        "updatedAt": null,
+        "profile": {
+            "name": "FlashDragon",
+            "avatar": "https://avatars.fastly.steamstatic.com/2046e46ff0fff3348ab0b945ad257ae7cc53965c_full.jpg",
+            "url": "https://steamcommunity.com/profiles/76561199654646467"
+        },
+        "summary": { "owned": 6, "played": 6, "hours": 579.9, "average": 96.6 },
+        "games": [
+            { "appid": 2356560, "name": "Monster Hunter Stories", "hours": 328 },
+            { "appid": 582010, "name": "Monster Hunter: World", "hours": 170 },
+            { "appid": 2852190, "name": "Monster Hunter Stories 3: Twisted Reflection", "hours": 50 },
+            { "appid": 1446780, "name": "Monster Hunter Rise", "hours": null },
+            { "appid": 2246340, "name": "Monster Hunter Wilds", "hours": null },
+            { "appid": 1277400, "name": "Monster Hunter Stories 2: Wings of Ruin", "hours": null }
+        ]
+    }
+    </script>
+    <!-- STEAM_DATA_END -->
     <div class="background-slider" aria-hidden="true">
         <div class="background-slide is-active"></div>
         <div class="background-slide"></div>
@@ -78,21 +100,23 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
-                <div class="d-block border border-primary rounded p-3 bg-gradient">
-                    <a id="profile-link-avatar" href="#" target="_blank" rel="noopener">
-                        <img id="avatar" class="avatar" alt="Steam avatar">
-                    </a>
-                    <div>
-                        <h1><a id="profile-name" href="#" target="_blank" rel="noopener"></a></h1>
-                        <p>Steam library showcase · top games by total playtime</p>
-                    </div>
-                    <dl>
+                <div class="steam-card d-block border border-primary rounded p-3 bg-gradient">
+                    <header class="steam-profile">
+                        <a id="profile-link-avatar" href="#" target="_blank" rel="noopener">
+                            <img id="avatar" class="steam-avatar" alt="Steam avatar">
+                        </a>
+                        <div class="steam-identity">
+                            <h3><a id="profile-name" href="#" target="_blank" rel="noopener"></a></h3>
+                            <p>Steam library showcase · top games by total playtime</p>
+                        </div>
+                    </header>
+                    <dl class="steam-summary">
                         <div><dt>Owned games</dt><dd id="owned">—</dd></div>
                         <div><dt>Played games</dt><dd id="played">—</dd></div>
                         <div><dt>Hours on record</dt><dd id="hours">—</dd></div>
                         <div><dt>Average playtime</dt><dd id="average">—</dd></div>
                     </dl>
-                    <section aria-labelledby="library-heading">
+                    <section class="steam-library" aria-labelledby="library-heading">
                         <div class="row row-show" id="library-heading">
                             <div class="col-9">
                                 <h4>Most played games</h4>

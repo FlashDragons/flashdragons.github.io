@@ -1,0 +1,104 @@
+.steam-profile {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.steam-avatar {
+    width: 64px;
+    height: 64px;
+    padding: 2px;
+    object-fit: cover;
+    border: 1px solid var(--fd-color-blue);
+    border-radius: 4px;
+    background: var(--fd-color-dark);
+}
+
+.steam-identity h3,
+.steam-identity p {
+    margin: 0;
+}
+
+.steam-identity p {
+    color: var(--fd-color-auxiliary);
+    font-size: .8rem;
+}
+
+.steam-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0 0 16px;
+    padding: 10px 0;
+    border-block: 1px solid rgba(145, 160, 183, .3);
+}
+
+.steam-summary > div {
+    min-width: 0;
+    padding: 0 8px;
+    border-left: 1px solid rgba(145, 160, 183, .3);
+    text-align: center;
+}
+
+.steam-summary > div:first-child {
+    border-left: 0;
+}
+
+.steam-summary dt {
+    min-height: 2.4em;
+    color: var(--fd-color-auxiliary);
+    font-size: clamp(.6rem, 1.2vw, .75rem);
+    line-height: 1.2;
+}
+
+.steam-summary dd {
+    margin: 3px 0 0;
+    font-size: clamp(.9rem, 2vw, 1.15rem);
+}
+
+.steam-card .games {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.steam-card .game {
+    display: grid;
+    grid-template-columns: 86px minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid rgba(145, 160, 183, .28);
+    border-radius: 4px;
+    color: var(--fd-color-main);
+    text-decoration: none;
+    background: rgba(33, 37, 41, .55);
+}
+
+.steam-card .game img {
+    width: 86px;
+    height: 54px;
+    object-fit: cover;
+}
+
+.steam-card .game-info {
+    min-width: 0;
+    padding: 6px 8px;
+}
+
+.steam-card .game-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.steam-card .playtime {
+    color: var(--fd-color-auxiliary);
+    font-size: .72rem;
+}
+
+@media (max-width: 575.98px) {
+    .steam-card .games {
+        grid-template-columns: 1fr;
+    }
+}
