@@ -52,6 +52,15 @@ games.forEach((game) => {
     strong.textContent = game.hours == null ? 'Sync pending' : `${formatNumber.format(game.hours)} hours`;
     playtime.append('Playtime: ', strong);
     info.append(name, playtime);
+
+    if (game.achievements?.total > 0) {
+        const achievements = document.createElement('div');
+        achievements.className = 'achievements';
+        const achievementCount = document.createElement('strong');
+        achievementCount.textContent = `${formatNumber.format(game.achievements.unlocked)}/${formatNumber.format(game.achievements.total)}`;
+        achievements.append('Achievements: ', achievementCount);
+        info.append(achievements);
+    }
     link.append(image, info);
     gamesRoot.append(link);
 });

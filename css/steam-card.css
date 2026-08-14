@@ -73,11 +73,13 @@
     color: var(--fd-color-main);
     text-decoration: none;
     background: rgba(33, 37, 41, .55);
+    min-height: 70px;
 }
 
 .steam-card .game img {
     width: 86px;
-    height: 54px;
+    height: 100%;
+    min-height: 70px;
     object-fit: cover;
 }
 
@@ -92,9 +94,16 @@
     white-space: nowrap;
 }
 
-.steam-card .playtime {
+.steam-card .playtime,
+.steam-card .achievements {
     color: var(--fd-color-auxiliary);
     font-size: .72rem;
+}
+
+.steam-card .playtime strong,
+.steam-card .achievements strong {
+    color: var(--fd-color-main);
+    font-weight: 400;
 }
 
 @media (max-width: 575.98px) {

@@ -3,6 +3,9 @@ import path from 'node:path';
 import process from 'node:process';
 
 const STEAM_ID = '76561199654646467';
+const imageOverrides = new Map([
+    [2852190, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2852190/d42ab41c29c230c2e855c32f6669f37043187b70/capsule_184x69.jpg']
+]);
 const apiKey = process.env.STEAM_API_KEY;
 const outputPath = path.resolve('index_en-us-preview.html');
 
@@ -44,12 +47,25 @@ const topGames = [...playedGames]
     .map((game) => ({ appid: game.appid, name: game.name, hours: round(game.playtime_forever / 60) }));
 
 await Promise.all(topGames.map(async (game) => {
-    try {
-        const response = await fetch(`https://store.steampowered.com/api/appdetails?appids=${game.appid}&l=english`);
-        const details = response.ok ? await response.json() : null;
-        game.image = details?.[game.appid]?.data?.header_image;
-    } catch {
-        // The page has a predictable CDN fallback if Store details are temporarily unavailable.
+    const [details, achievementResult] = await Promise.all([
+        fetch(`https://store.steampowered.com/api/appdetails?appids=${game.appid}&l=english`)
+            .then((response) => response.ok ? response.json() : null)
+            .catch(() => null),
+        steamApi('ISteamUserStats', 'GetPlayerAchievements', '0001', {
+            steamid: STEAM_ID,
+            appid: game.appid,
+            l: 'english'
+        }).catch(() => null)
+    ]);
+
+    game.image = imageOverrides.get(game.appid) ?? details?.[game.appid]?.data?.header_image;
+
+    const achievements = achievementResult?.playerstats?.achievements;
+    if (Array.isArray(achievements) && achievements.length > 0) {
+        game.achievements = {
+            unlocked: achievements.filter((achievement) => achievement.achieved === 1).length,
+            total: achievements.length
+        };
     }
 }));
 
