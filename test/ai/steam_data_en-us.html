@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>FlashDragon on Steam</title>
+    <link rel="icon" type="image/x-icon" href="https://steamcommunity.com/favicon.ico">
+    <style>
+        :root {
+            --panel: rgba(16, 27, 39, .96);
+            --panel-soft: rgba(31, 49, 66, .74);
+            --line: rgba(102, 192, 244, .28);
+            --blue: #66c0f4;
+            --blue-light: #c7e8fa;
+            --text: #d6d7d8;
+            --muted: #8f98a0;
+            --green: #a4d007;
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body { margin: 0; min-height: 100%; }
+
+        body {
+            padding: 12px;
+            color: var(--text);
+            background: transparent;
+            font: 14px/1.45 Arial, "Microsoft JhengHei", sans-serif;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .steam-card {
+            width: min(100%, 760px);
+            margin: 0 auto;
+            overflow: hidden;
+            border: 1px solid #263c4c;
+            border-radius: 5px;
+            background:
+                radial-gradient(circle at 85% 0, rgba(50, 112, 145, .34), transparent 38%),
+                linear-gradient(145deg, #1b2838, #101923 68%);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .36);
+        }
+
+        .profile {
+            display: grid;
+            grid-template-columns: 76px minmax(0, 1fr) auto;
+            gap: 14px;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .avatar {
+            width: 76px;
+            height: 76px;
+            padding: 3px;
+            object-fit: cover;
+            border: 1px solid #57cbde;
+            border-radius: 3px;
+            background: #16202d;
+        }
+
+        .identity h1 { margin: 0 0 3px; color: #fff; font-size: 21px; font-weight: 400; }
+        .identity p { margin: 0; color: var(--muted); font-size: 12px; }
+
+        .status {
+            align-self: start;
+            padding: 4px 9px;
+            border: 1px solid rgba(164, 208, 7, .48);
+            border-radius: 3px;
+            color: var(--green);
+            background: rgba(164, 208, 7, .08);
+            font-size: 12px;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin: 0;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(0, 0, 0, .12);
+        }
+
+        .summary div { padding: 0 12px; border-left: 1px solid rgba(255, 255, 255, .08); }
+        .summary div:first-child { padding-left: 0; border-left: 0; }
+        .summary dt { color: var(--muted); font-size: 11px; text-transform: uppercase; }
+        .summary dd { margin: 2px 0 0; color: #fff; font-size: 18px; }
+
+        .library { padding: 14px 16px 16px; }
+        .library-title { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+        .library-title h2 { margin: 0; color: var(--blue); font-size: 15px; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; }
+        .library-title span { color: var(--muted); font-size: 11px; }
+
+        .games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+
+        .game {
+            display: grid;
+            grid-template-columns: 92px minmax(0, 1fr);
+            min-height: 65px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .05);
+            border-radius: 3px;
+            background: var(--panel-soft);
+            transition: border-color .16s ease, transform .16s ease;
+        }
+
+        .game:hover { transform: translateY(-1px); border-color: rgba(102, 192, 244, .62); }
+        .game img { width: 92px; height: 100%; min-height: 65px; object-fit: cover; background: #182533; }
+        .game-info { min-width: 0; padding: 8px 9px; }
+        .game-name { overflow: hidden; color: var(--blue-light); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+        .playtime { margin-top: 7px; color: var(--muted); font-size: 12px; }
+        .playtime strong { color: #fff; font-weight: 400; }
+
+        .source { margin-top: 12px; color: var(--muted); font-size: 10px; text-align: right; }
+        .source a { color: var(--blue); }
+
+        @media (max-width: 620px) {
+            body { padding: 6px; }
+            .profile { grid-template-columns: 58px minmax(0, 1fr); padding: 12px; }
+            .avatar { width: 58px; height: 58px; }
+            .status { display: none; }
+            .summary { grid-template-columns: repeat(2, 1fr); gap: 10px 0; padding: 11px 12px; }
+            .summary div:nth-child(3) { padding-left: 0; border-left: 0; }
+            .games { grid-template-columns: 1fr; }
+            .library { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- STEAM_DATA_START -->
+    <script id="steam-data" type="application/json">
+    {
+        "updatedAt": null,
+        "profile": {
+        "name": "FlashDragon",
+        "avatar": "https://avatars.fastly.steamstatic.com/2046e46ff0fff3348ab0b945ad257ae7cc53965c_full.jpg",
+        "url": "https://steamcommunity.com/profiles/76561199654646467"
+    },
+        "summary": { "owned": 6, "played": 6, "hours": 579.9, "average": 96.6 },
+        "games": [
+        { "appid": 2356560, "name": "Monster Hunter Stories", "hours": 328 },
+        { "appid": 582010, "name": "Monster Hunter: World", "hours": 170 },
+        { "appid": 2852190, "name": "Monster Hunter Stories 3: Twisted Reflection", "hours": 50, "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2852190/d42ab41c29c230c2e855c32f6669f37043187b70/capsule_184x69.jpg" },
+        { "appid": 1446780, "name": "Monster Hunter Rise", "hours": null },
+        { "appid": 2246340, "name": "Monster Hunter Wilds", "hours": null },
+        { "appid": 1277400, "name": "Monster Hunter Stories 2: Wings of Ruin", "hours": null }
+    ]
+    }
+    </script>
+    <!-- STEAM_DATA_END -->
+
+    <main class="steam-card">
+        <header class="profile">
+            <a id="profile-link-avatar" href="#" target="_blank" rel="noopener">
+                <img id="avatar" class="avatar" alt="Steam avatar">
+            </a>
+            <div class="identity">
+                <h1><a id="profile-name" href="#" target="_blank" rel="noopener"></a></h1>
+                <p>Steam library showcase · top games by total playtime</p>
+            </div>
+            <div class="status">PUBLIC PROFILE</div>
+        </header>
+
+        <dl class="summary">
+            <div><dt>Owned games</dt><dd id="owned">—</dd></div>
+            <div><dt>Played games</dt><dd id="played">—</dd></div>
+            <div><dt>Hours on record</dt><dd id="hours">—</dd></div>
+            <div><dt>Average playtime</dt><dd id="average">—</dd></div>
+        </dl>
+
+        <section class="library" aria-labelledby="library-heading">
+            <div class="library-title">
+                <h2 id="library-heading">Most played games</h2>
+                <span>Top 6</span>
+            </div>
+            <div id="games" class="games"></div>
+            <footer class="source">
+                Updated <time id="updated">when the scheduled sync runs</time> ·
+                Data calculated from the <a href="https://steamdb.info/calculator/76561199654646467/" target="_blank" rel="noopener">SteamDB profile</a>
+                using the official Steam Web API.
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        const data = JSON.parse(document.getElementById('steam-data').textContent);
+        const formatNumber = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
+        const profileLinks = [document.getElementById('profile-link-avatar'), document.getElementById('profile-name')];
+
+        profileLinks.forEach((link) => { link.href = data.profile.url; });
+        document.getElementById('profile-name').textContent = data.profile.name;
+        document.getElementById('avatar').src = data.profile.avatar;
+        document.getElementById('owned').textContent = formatNumber.format(data.summary.owned);
+        document.getElementById('played').textContent = formatNumber.format(data.summary.played);
+        document.getElementById('hours').textContent = `${formatNumber.format(data.summary.hours)}h`;
+        document.getElementById('average').textContent = `${formatNumber.format(data.summary.average)}h`;
+
+        if (data.updatedAt) {
+            const updated = new Date(data.updatedAt);
+            const time = document.getElementById('updated');
+            time.dateTime = updated.toISOString();
+            time.textContent = updated.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+        }
+
+        const games = [...data.games]
+            .sort((a, b) => (b.hours ?? -1) - (a.hours ?? -1))
+            .slice(0, 6);
+        const gamesRoot = document.getElementById('games');
+
+        games.forEach((game) => {
+            const link = document.createElement('a');
+            link.className = 'game';
+            link.href = `https://store.steampowered.com/app/${game.appid}/`;
+            link.target = '_blank';
+            link.rel = 'noopener';
+
+            const image = document.createElement('img');
+            image.src = game.image || `https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`;
+            image.alt = '';
+            image.loading = 'lazy';
+
+            const info = document.createElement('div');
+            info.className = 'game-info';
+            const name = document.createElement('div');
+            name.className = 'game-name';
+            name.textContent = game.name;
+            name.title = game.name;
+            const playtime = document.createElement('div');
+            playtime.className = 'playtime';
+            const strong = document.createElement('strong');
+            strong.textContent = game.hours == null ? 'Sync pending' : `${formatNumber.format(game.hours)} hours`;
+            playtime.append('Playtime: ', strong);
+            info.append(name, playtime);
+            link.append(image, info);
+            gamesRoot.append(link);
+        });
+    </script>
+</body>
+</html>
