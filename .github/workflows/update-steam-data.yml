@@ -22,16 +22,16 @@ jobs:
       - name: Update Steam data
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
-        run: node scripts/update-steam-data.mjs
+        run: node test/ai/scripts/update-steam-data.mjs
 
       - name: Commit changed data
         run: |
-          if git diff --quiet -- iframe/steam_data_en-us.html; then
+          if git diff --quiet -- test/ai/steam_data_en-us.html; then
             echo "Steam data did not change."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add iframe/steam_data_en-us.html
+          git add test/ai/steam_data_en-us.html
           git commit -m "chore: update Steam card data"
           git push
