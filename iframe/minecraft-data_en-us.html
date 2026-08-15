@@ -2,25 +2,24 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="device-width, initial-scale=1">
-    <title>FlashDragon's Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minecraft Data</title>
     <link rel="icon" type="image/x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/steam-card.css">
     <style>
-        .text-secondary{
-            color: rgb(108, 117, 125); /*提取自bootstrap.min.css*/
-        }
-        div{
+        html,
+        body {
+            margin: 0;
+            overflow-x: hidden;
             background: transparent;
         }
-        .h3,h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){.h3,h3{font-size:1.75rem}} /*提取自bootstrap.min.css*/
-        .h4,h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){.h4,h4{font-size:1.5rem}} /*提取自bootstrap.min.css*/
     </style>
 <body>
-    <div>
-        <div class="steam-card" style="background: transparent;">
+    <div class="container-fluid px-0">
+        <div class="steam-card">
             <header class="steam-profile">
                 <a  href="#" target="_blank" rel="noopener">
                     <img src="https://s.namemc.com/2d/skin/face.png?id=d34aa7297d9af2d7&scale=8" class="steam-avatar" alt="Minecraft avatar">
@@ -34,10 +33,10 @@
                 </div>
             </header>
             <dl class="steam-summary">
-                <div><dt>Owned games</dt><dd id="owned">—</dd></div>
-                <div><dt>Played games</dt><dd id="played">—</dd></div>
-                <div><dt>Hours on record</dt><dd id="hours">—</dd></div>
-                <div><dt>Average playtime</dt><dd id="average">—</dd></div>
+                <div><dt>Owned games</dt><dd id="owned">1</dd></div>
+                <div><dt>Played games</dt><dd id="played">1</dd></div>
+                <div><dt>Hours on record</dt><dd id="hours">1</dd></div>
+                <div><dt>Average playtime</dt><dd id="average">1</dd></div>
             </dl>
             <section class="steam-library" aria-labelledby="library-heading">
                 <div class="row row-show" id="library-heading">

@@ -2,14 +2,14 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FlashDragon's Home</title>
     <link rel="icon" type="image/x-icon" href="https://flashdragons.github.io/assets/icon.ico">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
-    <link rel="stylesheet" href="https://flashdragons.github.io/css/steam-card.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/steam_card.css">
 </head>
 <body>
     <!-- STEAM_DATA_START -->
@@ -106,9 +106,9 @@
     <div class="container">
         <h1 class="d-flex align-items-center justify-content-center">Welcome to my home on the Internet!</h1> <!--水平垂直居中的文字-->
         <hr class="border-primary border-3 opacity-75">
-        <div class="row row-show">
-            <div class="col-lg-8 col-md-7">
-                <div class="d-block border border-primary rounded p-3 bg-gradient">
+        <div class="row row-show align-items-stretch">
+            <div class="col-lg-8 col-md-7 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
                 <div class="fd-text-orange">Here are my more accounts:</div>
                 <ul>
                     <p>
@@ -135,8 +135,8 @@
                 <div>Actually, I'm still learning how to write websites. And wishing to improve my skills soon.</div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-5">
-                <div class="d-block border border-primary rounded p-3 bg-gradient text-center">
+            <div class="col-lg-4 col-md-5 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient text-center w-100">
                     <h3>Local Time</h3>
                     <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
                         <div class="time-display" id="timeDisplay">00:00:00</div>
@@ -148,17 +148,17 @@
                 </div>
             </div>
         </div>
-        <div class="row row-show">
-            <div class="col-lg-6 col-md-6">
-                <div class="d-block border border-primary rounded p-2 bg-gradient">
-                    <iframe src="iframe/minecraft-data_en-us.html";
-                    style="background: transparent; border: 0; width: 100%; height: 525px"
+        <div class="row row-show align-items-stretch">
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
+                    <iframe id="autoHeightFrame" src="iframe/minecraft-data_en-us.html"
+                    style="background: transparent; border: 0px; width: 100%;"
                     allowtransparency="true"> <!--allowtransparency主要用于兼容旧浏览器-->
                     </iframe>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="steam-card d-block border border-primary rounded p-3 bg-gradient">
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="steam-card border border-primary rounded p-3 bg-gradient w-100">
                     <header class="steam-profile">
                         <a id="profile-link-avatar" href="#" target="_blank" rel="noopener">
                             <img id="avatar" class="steam-avatar" alt="Steam avatar">
@@ -212,5 +212,6 @@
     <script src="https://flashdragons.github.io/js/clock_style.js"></script>
     <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
     <script src="https://flashdragons.github.io/js/steam_data.js"></script>
+    <script src="https://flashdragons.github.io/js/auto_height_iframe.js"></script>
 </body>
 </html>
