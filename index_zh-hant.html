@@ -9,8 +9,85 @@
     <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/steam_card.css">
 </head>
 <body>
+    <!-- STEAM_DATA_START -->
+    <script id="steam-data" type="application/json">
+    {
+        "updatedAt": "2026-08-15T03:57:36.372Z",
+        "profile": {
+        "name": "FlashDragon",
+        "avatar": "https://avatars.steamstatic.com/2046e46ff0fff3348ab0b945ad257ae7cc53965c_full.jpg",
+        "url": "https://steamcommunity.com/id/FlashDragon/"
+    },
+    "summary": {
+        "owned": 7,
+        "played": 7,
+        "hours": 596.3,
+        "average": 85.2
+    },
+    "games": [
+        {
+            "appid": 2356560,
+            "name": "Monster Hunter Stories",
+            "hours": 328.5,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2356560/header.jpg?t=1768870714",
+            "achievements": {
+            "unlocked": 50,
+            "total": 50
+            }
+        },
+        {
+            "appid": 582010,
+            "name": "Monster Hunter: World",
+            "hours": 171,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1773328926",
+            "achievements": {
+            "unlocked": 32,
+            "total": 100
+            }
+        },
+        {
+            "appid": 2852190,
+            "name": "Monster Hunter Stories 3: Twisted Reflection",
+            "hours": 50.8,
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2852190/d42ab41c29c230c2e855c32f6669f37043187b70/capsule_184x69.jpg",
+            "achievements": {
+            "unlocked": 9,
+            "total": 52
+        }
+        },
+        {
+            "appid": 3065170,
+            "name": "Monster Hunter Wilds Beta test",
+            "hours": 15,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3065170/header.jpg?t=1738810885"
+        },
+        {
+            "appid": 1277400,
+            "name": "Monster Hunter Stories 2: Wings of Ruin",
+            "hours": 11.2,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1277400/header.jpg?t=1768870791",
+            "achievements": {
+            "unlocked": 5,
+            "total": 48
+            }
+        },
+        {
+            "appid": 2246340,
+            "name": "Monster Hunter Wilds",
+            "hours": 10.2,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2246340/header.jpg?t=1786607644",
+            "achievements": {
+            "unlocked": 5,
+            "total": 50
+            }
+        }
+        ]
+    }
+    </script>
+    <!-- STEAM_DATA_END -->
     <div class="background-slider" aria-hidden="true">
         <div class="background-slide is-active"></div>
         <div class="background-slide"></div>
@@ -27,11 +104,11 @@
         </div>
     </div>
     <div class="container">
-        <h1 class="text-center">歡迎來到我的互聯網主頁！</h1>
+        <h1 class="d-flex align-items-center justify-content-center">歡迎來到我的互聯網主頁！</h1>
         <hr class="border-primary border-3 opacity-75">
-        <div class="row row-show">
-            <div class="col-lg-8 col-md-7">
-                <div class="border border-primary rounded p-3 bg-gradient">
+        <div class="row row-show align-items-stretch">
+            <div class="col-lg-8 col-md-7 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
                 <div class="fd-text-orange">這些是我的更多賬號：</div>
                 <ul>
                     <p>
@@ -58,8 +135,8 @@
                 <div>實際上，我仍然在學習如何寫網站。希望我可以很快提高技能。</div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-5">
-                <div class="border border-primary rounded p-3 bg-gradient text-center">
+            <div class="col-lg-4 col-md-5 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient text-center w-100">
                     <h3>本地時間</h3>
                     <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
                         <div class="time-display" id="timeDisplay">00:00:00</div>
@@ -68,6 +145,50 @@
                         <button type="button" class="btn btn-outline-primary control-btn active" data-clock-format="24" aria-pressed="true" onclick="toggleFormat(24)">24小時制</button>
                         <button type="button" class="btn btn-outline-primary control-btn active" data-clock-seconds aria-pressed="true" onclick="toggleSeconds()">顯示/隱藏秒</button>
                     </div>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="row row-show align-items-stretch">
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
+                    <iframe id="autoHeightFrame" src="iframe/minecraft-data_zh-hant.html"
+                    style="background: transparent; border: 0px; width: 100%;"
+                    allowtransparency="true">
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="steam-card border border-primary rounded p-3 bg-gradient w-100">
+                    <header class="steam-profile">
+                        <a id="profile-link-avatar" href="#" target="_blank" rel="noopener">
+                            <img id="avatar" class="steam-avatar" alt="Steam 头像">
+                        </a>
+                        <div class="steam-identity">
+                            <h3><a id="profile-name" href="#" target="_blank" rel="noopener"></a></h3>
+                            <p>Steam 遊戲庫展示 · 按總遊玩時長排序的熱門遊戲</p>
+                        </div>
+                    </header>
+                    <dl class="steam-summary">
+                        <div><dt>擁有的遊戲</dt><dd id="owned">—</dd></div>
+                        <div><dt>玩過的遊戲</dt><dd id="played">—</dd></div>
+                        <div><dt>總遊玩時長</dt><dd id="hours">—</dd></div>
+                        <div><dt>平均遊玩時長</dt><dd id="average">—</dd></div>
+                    </dl>
+                    <section class="steam-library" aria-labelledby="library-heading">
+                        <div class="row row-show" id="library-heading">
+                            <div class="col-9">
+                                <h4>遊玩時間最長的遊戲</h4>
+                            </div>
+                            <div class="col-3 text-end">
+                                <div class="text-secondary">前 6 名</div>
+                            </div>
+                        </div>
+                        <div id="games" class="games"></div>
+                        <div class="text-secondary">
+                            最後更新：<time id="updated">排程同步執行時</time> · 每日 3:23（UTC+8.00）同步 · 資料由 Steam 官方 Web API 計算。
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -90,5 +211,7 @@
     <script src="https://flashdragons.github.io/js/index_body.js"></script>
     <script src="https://flashdragons.github.io/js/clock_style.js"></script>
     <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
+    <script src="https://flashdragons.github.io/js/steam_data_zh-hant.js"></script>
+    <script src="https://flashdragons.github.io/js/auto_height_iframe.js"></script>
 </body>
 </html>

@@ -9,8 +9,85 @@
     <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
     <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/steam_card.css">
 </head>
 <body>
+    <!-- STEAM_DATA_START -->
+    <script id="steam-data" type="application/json">
+    {
+        "updatedAt": "2026-08-15T03:57:36.372Z",
+        "profile": {
+        "name": "FlashDragon",
+        "avatar": "https://avatars.steamstatic.com/2046e46ff0fff3348ab0b945ad257ae7cc53965c_full.jpg",
+        "url": "https://steamcommunity.com/id/FlashDragon/"
+    },
+    "summary": {
+        "owned": 7,
+        "played": 7,
+        "hours": 596.3,
+        "average": 85.2
+    },
+    "games": [
+        {
+            "appid": 2356560,
+            "name": "Monster Hunter Stories",
+            "hours": 328.5,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2356560/header.jpg?t=1768870714",
+            "achievements": {
+            "unlocked": 50,
+            "total": 50
+            }
+        },
+        {
+            "appid": 582010,
+            "name": "Monster Hunter: World",
+            "hours": 171,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1773328926",
+            "achievements": {
+            "unlocked": 32,
+            "total": 100
+            }
+        },
+        {
+            "appid": 2852190,
+            "name": "Monster Hunter Stories 3: Twisted Reflection",
+            "hours": 50.8,
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2852190/d42ab41c29c230c2e855c32f6669f37043187b70/capsule_184x69.jpg",
+            "achievements": {
+            "unlocked": 9,
+            "total": 52
+        }
+        },
+        {
+            "appid": 3065170,
+            "name": "Monster Hunter Wilds Beta test",
+            "hours": 15,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3065170/header.jpg?t=1738810885"
+        },
+        {
+            "appid": 1277400,
+            "name": "Monster Hunter Stories 2: Wings of Ruin",
+            "hours": 11.2,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1277400/header.jpg?t=1768870791",
+            "achievements": {
+            "unlocked": 5,
+            "total": 48
+            }
+        },
+        {
+            "appid": 2246340,
+            "name": "Monster Hunter Wilds",
+            "hours": 10.2,
+            "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2246340/header.jpg?t=1786607644",
+            "achievements": {
+            "unlocked": 5,
+            "total": 50
+            }
+        }
+        ]
+    }
+    </script>
+    <!-- STEAM_DATA_END -->
     <div class="background-slider" aria-hidden="true">
         <div class="background-slide is-active"></div>
         <div class="background-slide"></div>
@@ -27,11 +104,11 @@
         </div>
     </div>
     <div class="container">
-        <h1 class="text-center">Welcome to my home on the Internet!</h1>
+        <h1 class="d-flex align-items-center justify-content-center">Welcome to my home on the Internet!</h1> <!--水平垂直居中的文字-->
         <hr class="border-primary border-3 opacity-75">
-        <div class="row row-show">
-            <div class="col-lg-8 col-md-7">
-                <div class="border border-primary rounded p-3 bg-gradient">
+        <div class="row row-show align-items-stretch">
+            <div class="col-lg-8 col-md-7 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
                 <div class="fd-text-orange">Here are my more accounts:</div>
                 <ul>
                     <p>
@@ -58,8 +135,8 @@
                 <div>Actually, I'm still learning how to write websites. And wishing to improve my skills soon.</div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-5">
-                <div class="border border-primary rounded p-3 bg-gradient text-center">
+            <div class="col-lg-4 col-md-5 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient text-center w-100">
                     <h3>Local Time</h3>
                     <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
                         <div class="time-display" id="timeDisplay">00:00:00</div>
@@ -68,6 +145,51 @@
                         <button type="button" class="btn btn-outline-primary control-btn active" data-clock-format="24" aria-pressed="true" onclick="toggleFormat(24)">24H</button>
                         <button type="button" class="btn btn-outline-primary control-btn active" data-clock-seconds aria-pressed="true" onclick="toggleSeconds()">Show/Hide Seconds</button>
                     </div>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="row row-show align-items-stretch">
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
+                    <iframe id="autoHeightFrame" src="iframe/minecraft-data_en-us.html"
+                    style="background: transparent; border: 0px; width: 100%;"
+                    allowtransparency="true"> <!--allowtransparency主要用于兼容旧浏览器-->
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="steam-card border border-primary rounded p-3 bg-gradient w-100">
+                    <header class="steam-profile">
+                        <a id="profile-link-avatar" href="#" target="_blank" rel="noopener">
+                            <img id="avatar" class="steam-avatar" alt="Steam avatar">
+                        </a>
+                        <div class="steam-identity">
+                            <h3><a id="profile-name" href="#" target="_blank" rel="noopener"></a></h3>
+                            <p>Steam library showcase · top games by total playtime</p>
+                        </div>
+                    </header>
+                    <dl class="steam-summary">
+                        <div><dt>Owned games</dt><dd id="owned">—</dd></div>
+                        <div><dt>Played games</dt><dd id="played">—</dd></div>
+                        <div><dt>Hours on record</dt><dd id="hours">—</dd></div>
+                        <div><dt>Average playtime</dt><dd id="average">—</dd></div>
+                    </dl>
+                    <section class="steam-library" aria-labelledby="library-heading">
+                        <div class="row row-show" id="library-heading">
+                            <div class="col-9">
+                                <h4>Most played games</h4>
+                            </div>
+                            <div class="col-3 text-end">
+                                <div class="text-secondary">Top 6</div>
+                            </div>
+                        </div>
+                        <div id="games" class="games"></div>
+                        <div class="text-secondary">
+                            Last update: <time id="updated">when the scheduled sync runs</time> 3:23 UTC+8.00 ·
+                            Data calculated from the official Steam Web API.
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -90,5 +212,7 @@
     <script src="https://flashdragons.github.io/js/index_body.js"></script>
     <script src="https://flashdragons.github.io/js/clock_style.js"></script>
     <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
+    <script src="https://flashdragons.github.io/js/steam_data_en-us.js"></script>
+    <script src="https://flashdragons.github.io/js/auto_height_iframe.js"></script>
 </body>
 </html>
