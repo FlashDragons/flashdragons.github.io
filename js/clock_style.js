@@ -99,7 +99,7 @@ function updateDateDisplay(date) {
     } else {
         const month = date.toLocaleDateString('en-US', { month: 'long' });
         const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
-        dateString = `${year} ${month} ${day}, ${weekday}`;
+        dateString = `${month} ${day} ${year}, ${weekday}`;
     }
 
     document.getElementById('dateDisplay').textContent = dateString;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="device-width, initial-scale=1">
+    <title>FlashDragon's Home</title>
+    <link rel="icon" type="image/x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/steam-card.css">
+    <style>
+        .text-secondary{
+            color: rgb(108, 117, 125); /*提取自bootstrap.min.css*/
+        }
+        div{
+            background: transparent;
+        }
+        .h3,h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){.h3,h3{font-size:1.75rem}} /*提取自bootstrap.min.css*/
+        .h4,h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){.h4,h4{font-size:1.5rem}} /*提取自bootstrap.min.css*/
+    </style>
+<body>
+    <div>
+        <div class="steam-card" style="background: transparent;">
+            <header class="steam-profile">
+                <a  href="#" target="_blank" rel="noopener">
+                    <img src="https://s.namemc.com/2d/skin/face.png?id=d34aa7297d9af2d7&scale=8" class="steam-avatar" alt="Minecraft avatar">
+                </a>
+                <div class="steam-identity">
+                    <h3>
+                        <a href="https://namemc.com/profile/Flash_Dragon.2" target="_blank" rel="noopener" title="Java Edition">Flash_Dragon</a>
+                        <a href="https://www.xbox.com/en-US/play/user/FlashDragons" target="_blank" rel="noopener" title="Bedrock Edition">FlashDragons</a>
+                    </h3>
+                    <p>Steam library showcase · top games by total playtime</p>
+                </div>
+            </header>
+            <dl class="steam-summary">
+                <div><dt>Owned games</dt><dd id="owned">—</dd></div>
+                <div><dt>Played games</dt><dd id="played">—</dd></div>
+                <div><dt>Hours on record</dt><dd id="hours">—</dd></div>
+                <div><dt>Average playtime</dt><dd id="average">—</dd></div>
+            </dl>
+            <section class="steam-library" aria-labelledby="library-heading">
+                <div class="row row-show" id="library-heading">
+                    <div class="col-9">
+                        <h4>Most played games</h4>
+                    </div>
+                    <div class="col-3 text-end">
+                        <div class="text-secondary">Top 6</div>
+                    </div>
+                </div>
+                <div id="games" class="games"></div>
+                <div class="text-secondary">
+                    Updated <time id="updated">when the scheduled sync runs</time> 3:23 UTC ·
+                    Data calculated from the official Steam Web API.
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

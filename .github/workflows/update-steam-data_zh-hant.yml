@@ -2,7 +2,7 @@ name: Update Steam card zh-hant
 
 on:
   schedule:
-    - cron: '23 3 * * *'
+    - cron: '23 22 * * *'
   workflow_dispatch:
 
 permissions:
