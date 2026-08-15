@@ -1,4 +1,4 @@
-name: Update Steam card en-us preview
+name: Update Steam card en-us
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: update-steam-card-en-us-preview
+  group: update-steam-card-en-us
   cancel-in-progress: true
 
 jobs:
@@ -19,19 +19,19 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Update Steam data en-us preview
+      - name: Update Steam data en-us
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
-        run: node js/update-steam-data_en-us-preview.mjs
+        run: node js/update-steam-data_en-us.mjs
 
       - name: Commit changed data
         run: |
-          if git diff --quiet -- index_en-us-preview.html; then
+          if git diff --quiet -- index_en-us.html; then
             echo "Steam data did not change."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index_en-us-preview.html
-          git commit -m "chore: update Steam card data en-us preview"
+          git add index_en-us.html
+          git commit -m "chore: update Steam card data en-us"
           git push
