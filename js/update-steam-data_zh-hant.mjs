@@ -7,7 +7,7 @@ const imageOverrides = new Map([
     [2852190, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2852190/d42ab41c29c230c2e855c32f6669f37043187b70/capsule_184x69.jpg']
 ]);
 const apiKey = process.env.STEAM_API_KEY;
-const outputPath = path.resolve('index_zh-hant.html');
+const outputPath = path.resolve('iframe/steam-data_zh-hant.html');
 
 if (!apiKey) {
     throw new Error('STEAM_API_KEY is required. Add it as a GitHub Actions repository secret.');
