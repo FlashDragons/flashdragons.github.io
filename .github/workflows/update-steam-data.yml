@@ -1,4 +1,4 @@
-name: Update Steam card
+name: Update Steam cards
 
 on:
   schedule:
@@ -19,19 +19,34 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Update Steam data
+      - name: Update all Steam card data
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
-        run: node test/ai/scripts/update-steam-data.mjs
+        run: |
+          node test/ai/scripts/update-steam-data.mjs
+          node js/update-steam-data_en-us-preview.mjs
+          node js/update-steam-data_en-us.mjs
+          node js/update-steam-data_zh-hans.mjs
+          node js/update-steam-data_zh-hant.mjs
 
       - name: Commit changed data
         run: |
-          if git diff --quiet -- test/ai/steam_data_en-us.html; then
+          if git diff --quiet -- \
+            test/ai/steam_data_en-us.html \
+            index_en-us-preview.html \
+            index_en-us.html \
+            index_zh-hans.html \
+            index_zh-hant.html; then
             echo "Steam data did not change."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add test/ai/steam_data_en-us.html
-          git commit -m "chore: update Steam card data"
+          git add \
+            test/ai/steam_data_en-us.html \
+            index_en-us-preview.html \
+            index_en-us.html \
+            index_zh-hans.html \
+            index_zh-hant.html
+          git commit -m "chore: update Steam card data for all pages"
           git push
