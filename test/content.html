@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content Test</title>
+    <link rel="icon" type="image/x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
+    <style>
+        body{
+            background-color: var(--fd-color-bottom);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row row-show d-flex align-items-center">
+                <div class="col-lg-6 col-md-6 text-base"><img src="https://flashdragons.github.io/assets/icon.ico" alt="Icon" class="img-fluid" width="20"> Content Test Page</div>
+                <div class="col-lg-6 col-md-6 text-end">This is a content test page.</div>
+            </div>
+            <div class="text-end">
+                <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
+                    <span id="timeDisplay">00:00:00</span> | 
+                    <span id="dateDisplay">2026 August 6, Thursday</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+        // your code here
+        });
+    </script>
+    <nav>
+        <div>Content</div>
+        <ul id="toc-list"></ul>
+    </nav>
+    <div class="container">
+        <h1 id="Title 1">Title 1</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+        <h2 id="Title 1-1">Title 1-1</h2>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+        <h2 id="Title 1-2">Title 1-2</h2>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+        <h1 id="Title 2">Title 2</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+        <h2 id="Title 1-1">Title 2-1</h2>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+        <h2 id="Title 1-2">Title 2-2</h2>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+        <h1 id="Title 3">Title 3</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+        <h2 id="Title 1-1">Title 3-1</h2>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+        <h2 id="Title 1-2">Title 3-2</h2>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eaque ratione officia odit corrupti deleniti ut expedita ullam tenetur ex minus perferendis nisi eos harum sapiente nulla quis consequatur vero!</div>
+    </div>
+    <footer class="footer"> <!-- 页脚 -->
+        <div class="container-fluid">
+            &copy; 2026 My own website, all rights reserved.
+        </div>
+    </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var toc = document.getElementById("toc-list");
+        var content = document.querySelector(".content-container");
+        if (!toc || !content) {
+            return;
+        }
+        var headings = content.querySelectorAll("h1, h2, h3, h4, h5, h6");
+        headings.forEach(function (heading, index) {
+            var label = heading.textContent.trim();
+            if (!label) {
+            return;
+            }
+            if (!heading.id) {
+            heading.id = "section-" + (index + 1);
+            }
+            var li = document.createElement("li");
+            li.className = "toc-level-" + heading.tagName.toLowerCase();
+            var link = document.createElement("a");
+            link.href = "#" + heading.id;
+            link.textContent = label;
+            li.appendChild(link);
+            toc.appendChild(li);
+        });
+    });
+    </script>
+    <script src="https://flashdragons.github.io/js/clock_style.js"></script>
+    <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

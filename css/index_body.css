@@ -7,7 +7,7 @@
 分割线：#324055*/
 /* 使用变量统一管理颜色 */
 :root {
-    --fd-color-bottom: #050505;
+    --fd-color-bottom: #212529;
     --fd-color-background: #1a2335cc;
     --fd-color-bar: #363a3d;
     --fd-color-main: #e8edf7;
@@ -20,7 +20,7 @@
     --fd-color-blue: #0d6efd;
     --fd-color-purple: #6f42c1;
     --fd-color-gray: #6c757d;
-    --fd-color-dark: #212529;
+    --fd-color-dark: #181a1b;
     --fd-color-light: #f8f9fa;
 }
 /* 文字颜色工具类 */
@@ -56,7 +56,7 @@ body{
     inset: 0;
     z-index: -1;
     overflow: hidden;
-    background: var(--fd-color-dark);
+    background: var(--fd-color-bottom);
 }
 .background-slide {
     position: absolute;
