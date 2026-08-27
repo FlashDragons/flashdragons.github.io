@@ -501,8 +501,62 @@
             <div class="spinner-grow bg-primary">111</div>
             <br>
             上方的按钮测试+也有
+        </div>
+        <div><span class="h1">文本截断测试</span>&nbsp;&nbsp;<span class="text-secondary">将长文本截断并用省略号代替。</span></div>
+        <!-- Block level -->
+        <div class="row">
+            <div class="col-2 text-truncate" title="This text is quite long, and will be truncated once displayed.">
+                This text is quite long, and will be truncated once displayed.
+            </div>
+        </div>
+        <!-- Inline level -->
+        <span class="d-inline-block text-truncate" style="max-width: 150px;" title="This text is quite long, and will be truncated once displayed.">
+            This text is quite long, and will be truncated once displayed.
+        </span>
+        <h1>分页测试</h1>
+        <div>通过添加<code>.pagination-lg</code>或<code>.pagination-sm</code>可以设置其尺寸。</div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end"><!--默认左对齐，center居中-->
+                <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-lg">
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link">1</span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <br>
     </div>
-    <footer class="site-footer"> <!-- 页脚 -->
+    <footer class="site-footer container-fluid"> <!-- 页脚 -->
         <div>&copy; 2026 我的网站，保留所有权利。</div>
     </footer>
     <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
