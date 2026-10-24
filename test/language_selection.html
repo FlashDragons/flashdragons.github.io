@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-hans">
+<html lang="en-us">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,7 +109,7 @@ function changeLanguage(lang) {
     });
 
     // 更新根目录的 lang 属性，符合无障碍与SEO规范
-    document.documentElement.lang = lang === 'zh-hans' ? 'zh-hant' : 'en-us';
+    document.documentElement.lang = lang;
     
     // 可选：将用户的语言选择保存在 localStorage 中
     localStorage.setItem('preferred_lang', lang);
