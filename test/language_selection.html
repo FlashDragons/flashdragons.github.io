@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-key="head_title">语言切换测试</title>
+    <link rel="icon" type="x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
+</head>
+<body>
+    <div class="background-slider" aria-hidden="true"><!-- 背景轮播 -->
+        <div class="background-slide is-active"></div>
+        <div class="background-slide"></div>
+    </div>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row row-show d-flex align-items-center">
+                <div class="col-lg-6 col-md-6 text-base"><img src="https://flashdragons.github.io/assets/icon.ico" alt="Icon" class="img-fluid" width="20"> <span data-key="head_title">语言切换测试</span></div>
+                <div class="col-lg-6 col-md-6 text-end" data-key="head_description">这是一个支持多语言切换的静态页面。</div>
+            </div>
+            <div class="text-end">
+                <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
+                    <span id="timeDisplay">00:00:00</span> | 
+                    <span id="dateDisplay" data-key="clock">2026 August 6, Thursday</span>
+                </div>
+            </div>
+            <div style="margin-bottom: 20px;">
+            <label for="languageSelect">选择语言 / Select Language: </label>
+            <select id="languageSelect" onchange="changeLanguage(this.value)">
+                <option value="en-us">English</option>
+                <option value="zh-hans">简体中文</option>
+                <option value="zh-hant">繁體中文</option>
+            </select>
+            </div>
+        </div>
+    </div>
+    <div class="container p-3">
+        <h1 data-key="title" class="text-center">欢迎来到我的网站</h1>
+        <hr class="border-primary border-3 opacity-75"></hr>
+        <p data-key="description">这是一个支持多语言切换的静态 HTML 页面例子。</p>
+    </div>
+    <footer class="footer"> <!-- 页脚 -->
+        <div class="container-fluid">
+            <div class="row row-show">
+                <div class="col-lg-6 col-md-6 text-base" data-key="footer_left">&copy; 2026 My own website, all rights reserved.</div>
+                <div class="col-lg-6 col-md-6 text-end"><span data-key="footer_right1">&radic; The Safi'jiiva and Xeno'jiiva background image comes from </span><a href="https://x.com/GemRune_/status/1826915533234872716" target="_blank">X</a><span data-key="footer_right2"> and was created by </span><a href="https://x.com/Gemrune_" target="_blank">でぃあ</a><span data-key="footer_right3">. This site has obtained </span><a href="https://flashdragons.github.io/assets/pics/right.webp" target="_blank" data-key="footer_right4">permission</a><span data-key="footer_right5"> to use it.</span></div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://flashdragons.github.io/js/index_body.js"></script>
+    <script src="https://flashdragons.github.io/js/clock_style.js"></script>
+    <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 语言包数据
+const translations = {
+    "zh-hans": {
+        head_title: "语言切换测试",
+        head_description: "这是一个支持多语言切换的静态页面。",
+        clock: "2026年8月6日 星期四",
+        title: "欢迎来到我的网站",
+        description: "这是一个支持多语言切换的静态 HTML 页面例子。",
+        footer_left: "2026 我的网站，保留所有权利。",
+        footer_right1: "&radic; 冥赤龙和冥灯龙背景图来源于",
+        footer_right2: "，作者是",
+        footer_right3: "，本站已获得",
+        footer_right4: "使用权",
+        footer_right5: "。"
+    },
+    "zh-hant": {
+        head_title: "語言切換測試",
+        head_description: "這是一個支持多語言切換的靜態頁面。",
+        clock: "2026年8月6日 星期四",
+        title: "歡迎來到我的網站",
+        description: "這是一個支持多語言切換的靜態 HTML 頁面例子。",
+        footer_left: "2026 我的網站，保留所有權利。",
+        footer_right1: "&radic; 冥赤龍和冥燈龍背景圖來源於",
+        footer_right2: "，作者是",
+        footer_right3: "，本站已獲得",
+        footer_right4: "使用权",
+        footer_right5: "。"
+    },
+    "en-us": {
+        head_title: "Language Selection Test",
+        head_description: "This is a static page that supports switching between multiple languages.",
+        clock: "2026 August 6, Thursday",
+        title: "Welcome to my website",
+        description: "This is an example of a static HTML page supporting multiple languages.",
+        footer_left: "2026 My own website, all rights reserved.",
+        footer_right1: "&radic; The Safi'jiiva and Xeno'jiiva background image comes from",
+        footer_right2: "and was created by",
+        footer_right3: ". This site has obtained",
+        footer_right4: "permission",
+        footer_right5: "to use it."
+    }
+};
+
+// 切换语言的函数
+function changeLanguage(lang) {
+    // 获取所有带有 data-key 属性的元素
+    const elements = document.querySelectorAll('[data-key]');
+    
+    elements.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    // 更新根目录的 lang 属性，符合无障碍与SEO规范
+    document.documentElement.lang = lang === 'zh-hans' ? 'zh-hant' : 'en-us';
+    
+    // 可选：将用户的语言选择保存在 localStorage 中
+    localStorage.setItem('preferred_lang', lang);
+}
+
+// 页面加载时，读取保存的语言或默认使用英文
+window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferred_lang') || 'en-us';
+    document.getElementById('languageSelect').value = savedLang;
+    changeLanguage(savedLang);
+});
+
+    </script>
+</body>
+</html>
