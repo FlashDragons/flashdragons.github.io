@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-key="title">Wiki Home</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icon.ico">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-face.css">
+    <link rel="stylesheet" href="/css/index_body.css">
+    <link rel="stylesheet" href="/css/clock_style.css">
+</head>
+<body>
+    <div class="background-slider" aria-hidden="true">
+        <div class="background-slide is-active"></div>
+        <div class="background-slide"></div>
+    </div>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row row-show d-flex align-items-center">
+                <div class="col-lg-6 col-md-6 text-base"><img src="/assets/icon.ico" alt="Icon" data-key-alt="iconAlt" class="img-fluid" width="20"> <span data-key="header">Wiki Home</span></div>
+                <div class="col-lg-6 col-md-6 text-md-end mt-2 mt-md-0">
+                    <div class="d-inline-flex align-items-center gap-2 rounded-pill border border-warning border-opacity-50 bg-dark bg-opacity-75 px-3 py-2 shadow-sm" data-bs-theme="dark">
+                        <label for="languageSelect" class="mb-0 text-warning fw-semibold small text-nowrap">🌐 Language / 语言</label>
+                        <select id="languageSelect" class="form-select form-select-sm w-auto bg-transparent border-0 fw-semibold" aria-label="Language / 语言">
+                            <option value="en-us">English</option>
+                            <option value="zh-hans">简体中文</option>
+                            <option value="zh-hant">繁體中文</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-3">
+        <h1 class="text-center" data-key="welcome">Welcome to my wiki!</h1>
+        <hr class="border-primary border-3 opacity-75">
+        <div class="row row-show">
+            <div class="col-lg-8 col-md-7">
+                <div class="border border-primary rounded p-3 bg-gradient">
+                    <div data-key="intro1">I like playing Minecraft and Monster Hunter, and I have written some strategies for them.</div>
+                    <div data-key="intro2">I'm not a professional writer, but I try to make my content as clear and helpful as possible.</div>
+                    <div data-key="linksIntro">Here are the links to the games:</div>
+                    <div class="mt-2 d-flex flex-wrap gap-2">
+                        <a id="minecraftLink" href="minecraft/?lang=en-us" class="btn btn-outline-primary" target="_blank" rel="noopener" data-key="minecraft">Minecraft Strategies</a>
+                        <a id="mhstLink" href="MHST/?lang=en-us" class="btn btn-outline-primary" target="_blank" rel="noopener" data-key="mhst">Monster Hunter Stories Strategies</a>
+                    </div>
+                    <div class="mt-2"><span data-key="backPrefix">Back to </span><a id="homeLink" href="/index_en-us.html" data-key="home">Home Page</a><span data-key="backSuffix">.</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <div class="border border-primary rounded p-3 bg-gradient text-center">
+                    <h3 data-key="localTime">Local Time</h3>
+                    <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
+                        <div class="time-display" id="timeDisplay">00:00:00</div>
+                        <div class="date-display" id="dateDisplay"></div>
+                        <button type="button" class="btn btn-outline-primary control-btn" data-clock-format="12" aria-pressed="false" onclick="toggleFormat(12)" data-key="hour12">12H</button>
+                        <button type="button" class="btn btn-outline-primary control-btn active" data-clock-format="24" aria-pressed="true" onclick="toggleFormat(24)" data-key="hour24">24H</button>
+                        <button type="button" class="btn btn-outline-primary control-btn active" data-clock-seconds aria-pressed="true" onclick="toggleSeconds()" data-key="seconds">Show/Hide Seconds</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row row-show">
+                <div class="col-lg-6 col-md-6 text-base" data-key="copyright">© 2026 My own website, all rights reserved.</div>
+                <div class="col-lg-6 col-md-6 text-end">
+                    <span data-key="credit1">√ The Safi'jiiva and Xeno'jiiva background image comes from </span><a href="https://x.com/GemRune_/status/1826915533234872716" target="_blank" rel="noopener">X</a><span data-key="credit2"> and was created by </span><a href="https://x.com/Gemrune_" target="_blank" rel="noopener">でぃあ</a><span data-key="credit3">. This site has obtained </span><a href="/assets/pics/right.webp" target="_blank" rel="noopener" data-key="permission">permission</a><span data-key="credit4"> to use it.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/index_body.js"></script>
+    <script src="index.js"></script>
+    <script src="/js/clock_style.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

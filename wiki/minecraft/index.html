@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-key="title">Minecraft Wiki Page</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icon.ico">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-face.css">
+    <link rel="stylesheet" href="/css/index_body.css">
+    <link rel="stylesheet" href="/css/clock_style.css">
+</head>
+<body>
+    <div class="background-slider" aria-hidden="true">
+        <div class="background-slide is-active"></div>
+        <div class="background-slide"></div>
+    </div>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row row-show d-flex align-items-center">
+                <div class="col-lg-6 col-md-6 text-base"><img src="/assets/icon.ico" alt="Icon" data-key-alt="iconAlt" class="img-fluid" width="20"> <span data-key="header">Minecraft Wiki Page</span></div>
+                <div class="col-lg-6 col-md-6 text-md-end mt-2 mt-md-0">
+                    <div class="d-inline-flex align-items-center gap-2 rounded-pill border border-warning border-opacity-50 bg-dark bg-opacity-75 px-3 py-2 shadow-sm" data-bs-theme="dark">
+                        <label for="languageSelect" class="mb-0 text-warning fw-semibold small text-nowrap">🌐 Language / 语言</label>
+                        <select id="languageSelect" class="form-select form-select-sm w-auto bg-transparent border-0 fw-semibold" aria-label="Language / 语言">
+                            <option value="en-us">English</option>
+                            <option value="zh-hans">简体中文</option>
+                            <option value="zh-hant">繁體中文</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="text-end">
+                <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
+                    <span id="timeDisplay">00:00:00</span> | <span id="dateDisplay"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-3">
+        <h1 class="text-center" data-key="welcome">Welcome to the Minecraft Wiki!</h1>
+        <hr class="border-primary border-3 opacity-75">
+        <div data-key="empty">Sorry, there are nothing here currently.</div>
+        <br>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row row-show">
+                <div class="col-lg-6 col-md-6 text-base" data-key="copyright">© 2026 My own website, all rights reserved.</div>
+                <div class="col-lg-6 col-md-6 text-end" data-key="footerEmpty">Empty here...</div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/index_body.js"></script>
+    <script src="index.js"></script>
+    <script src="/js/clock_style.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
