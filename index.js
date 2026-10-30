@@ -269,13 +269,13 @@ function changeLanguage(lang) {
     document.getElementById('steamDataFrame').src = `iframe/steam-data.html?lang=${lang}`;
     document.querySelectorAll('a[href^="wiki/"]').forEach(link => link.href = `wiki/?lang=${lang}`);
     document.querySelectorAll('a[href^="bbs/"]').forEach(link => link.href = `bbs/?lang=${lang}`);
-    localStorage.setItem('preferred_lang', lang);
     if (typeof updateDateDisplay === 'function') updateDateDisplay(new Date());
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    const requested = new URLSearchParams(location.search).get('lang');
-    const saved = localStorage.getItem('preferred_lang');
-    changeLanguage(translations[requested] ? requested : saved);
-    document.getElementById('languageSelect').addEventListener('change', event => changeLanguage(event.target.value));
+    changeLanguage(siteLanguage.resolve());
+    document.getElementById('languageSelect').addEventListener('change', event => {
+        siteLanguage.save(event.target.value);
+        changeLanguage(event.target.value);
+    });
 });

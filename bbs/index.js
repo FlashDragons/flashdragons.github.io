@@ -87,12 +87,12 @@ function changeLanguage(lang) {
     document.documentElement.lang = lang;
     document.getElementById('languageSelect').value = lang;
     document.getElementById('homeLink').href = `../index.html?lang=${lang}`;
-    localStorage.setItem('preferred_lang', lang);
     if (typeof updateDateDisplay === 'function') updateDateDisplay(new Date());
 }
 window.addEventListener('DOMContentLoaded', () => {
-    const requested = new URLSearchParams(location.search).get('lang');
-    const saved = localStorage.getItem('preferred_lang');
-    changeLanguage(Object.hasOwn(translations, requested) ? requested : saved);
-    document.getElementById('languageSelect').addEventListener('change', event => changeLanguage(event.target.value));
+    changeLanguage(siteLanguage.resolve());
+    document.getElementById('languageSelect').addEventListener('change', event => {
+        siteLanguage.save(event.target.value);
+        changeLanguage(event.target.value);
+    });
 });

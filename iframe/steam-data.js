@@ -11,7 +11,7 @@ const translations = {
         "steam12": "Top 6",
         "steam13": "\n                  Last update: ",
         "steam14": "when the scheduled sync runs",
-        "steam15": " · Daily 22:23 (UTC) Sync ·\n                  Data calculated from the official Steam Web API.\n              ",
+        "steam15": " · \n                  Data calculated from the official Steam Web API.\n              ",
         "pending": "Sync pending",
         "hours": "hours",
         "playtime": "Playtime: ",
@@ -37,7 +37,7 @@ const translations = {
         "steam12": "前 6 名",
         "steam13": "\n                最后更新：",
         "steam14": "计划同步运行时",
-        "steam15": " · 每日 22:23（UTC）同步 · 数据由 Steam 官方 Web API 计算。\n            ",
+        "steam15": " ·  数据由 Steam 官方 Web API 计算。\n            ",
         "pending": "等待同步",
         "hours": "小时",
         "playtime": "游玩时间：",
@@ -63,7 +63,7 @@ const translations = {
         "steam12": "前 6 名",
         "steam13": "\n                  最後更新：",
         "steam14": "排程同步執行時",
-        "steam15": " · 每日 22:23（UTC）同步 · 資料由 Steam 官方 Web API 計算。\n              ",
+        "steam15": " ·  資料由 Steam 官方 Web API 計算。\n              ",
         "pending": "等待同步",
         "hours": "小時",
         "playtime": "遊玩時間：",
@@ -78,8 +78,7 @@ const translations = {
         }
     }
 };
-const requested = new URLSearchParams(location.search).get('lang') || localStorage.getItem('preferred_lang');
-const lang = translations[requested] ? requested : 'en-us';
+const lang = siteLanguage.resolve();
 const t = translations[lang];
 document.documentElement.lang = lang;
 document.title = t.steam0;
@@ -106,7 +105,12 @@ if (data.updatedAt) {
     const updated = new Date(data.updatedAt);
     const time = document.getElementById('updated');
     time.dateTime = updated.toISOString();
-    time.textContent = updated.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+    // 使用访客系统时区显示数据实际更新时刻（包括夏令时）。
+    time.textContent = updated.toLocaleString(lang, {
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hourCycle: 'h23', timeZoneName: 'shortOffset'
+    });
 }
 
 const games = [...data.games]
