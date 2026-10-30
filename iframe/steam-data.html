@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steam Data</title>
+  <link rel="icon" type="image/x-icon" href="/assets/icon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-face.css">
+  <link rel="stylesheet" href="/css/index_body.css">
+  <link rel="stylesheet" href="/css/steam_card.css">
+  <style>
+      html,
+      body {
+          margin: 0;
+          min-height: 0;
+          overflow: hidden;
+          background: transparent;
+      }
+      .steam-summary dt {
+          font-size: .75rem;
+      }
+      .steam-summary dd {
+          font-size: 1.15rem;
+      }
+      .steam-card .row { margin-inline: 0; }
+  </style>
+</head>
+<body>
+  <!-- STEAM_DATA_START -->
+    <script id="steam-data" type="application/json">
+    {
+      "updatedAt": "2026-10-28T01:28:41.158Z",
+      "profile": {
+        "name": "FlashDragon",
+        "avatar": "https://avatars.steamstatic.com/2046e46ff0fff3348ab0b945ad257ae7cc53965c_full.jpg",
+        "url": "https://steamcommunity.com/id/FlashDragon/"
+      },
+      "summary": {
+        "owned": 7,
+        "played": 7,
+        "hours": 670.6,
+        "average": 95.8
+      },
+      "games": [
+        {
+          "appid": 2356560,
+          "name": "Monster Hunter Stories",
+          "hours": 328.7,
+          "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2356560/header.jpg?t=1768870714",
+          "achievements": {
+            "unlocked": 50,
+            "total": 50
+          }
+        },
+        {
+          "appid": 582010,
+          "name": "Monster Hunter: World",
+          "hours": 240.7,
+          "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1791439347",
+          "achievements": {
+            "unlocked": 36,
+            "total": 100
+          }
+        },
+        {
+          "appid": 2852190,
+          "name": "Monster Hunter Stories 3: Twisted Reflection",
+          "hours": 55.3,
+          "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2852190/d42ab41c29c230c2e855c32f6669f37043187b70/capsule_184x69.jpg",
+          "achievements": {
+            "unlocked": 11,
+            "total": 52
+          }
+        },
+        {
+          "appid": 3065170,
+          "name": "Monster Hunter Wilds Beta test",
+          "hours": 15,
+          "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3065170/header.jpg?t=1738810885"
+        },
+        {
+          "appid": 1277400,
+          "name": "Monster Hunter Stories 2: Wings of Ruin",
+          "hours": 11.2,
+          "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1277400/header.jpg?t=1768870791",
+          "achievements": {
+            "unlocked": 5,
+            "total": 48
+          }
+        },
+        {
+          "appid": 2246340,
+          "name": "Monster Hunter Wilds",
+          "hours": 10.2,
+          "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2246340/header.jpg?t=1787549555",
+          "achievements": {
+            "unlocked": 5,
+            "total": 50
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- STEAM_DATA_END -->
+  <div class="container-fluid px-0">
+      <div class="steam-card">
+          <header class="steam-profile">
+              <a id="profile-link-avatar" href="#" target="_blank" rel="noopener">
+                  <img id="avatar" class="steam-avatar" alt="Steam avatar">
+              </a>
+              <div class="steam-identity">
+                  <h3><a id="profile-name" href="#" target="_blank" rel="noopener"></a></h3>
+                  <p><span data-key="steam2">Steam library showcase · top games by total playtime</span></p>
+              </div>
+          </header>
+          <dl class="steam-summary">
+              <div><dt><span data-key="steam3">Owned games</span></dt><dd id="owned">—</dd></div>
+              <div><dt><span data-key="steam5">Played games</span></dt><dd id="played">—</dd></div>
+              <div><dt><span data-key="steam7">Hours on record</span></dt><dd id="hours">—</dd></div>
+              <div><dt><span data-key="steam9">Average playtime</span></dt><dd id="average">—</dd></div>
+          </dl>
+          <section class="steam-library" aria-labelledby="library-heading">
+              <div class="row row-show" id="library-heading">
+                  <div class="col-9">
+                      <h4><span data-key="steam11">Most played games</span></h4>
+                  </div>
+                  <div class="col-3 text-end">
+                      <div class="text-secondary"><span data-key="steam12">Top 6</span></div>
+                  </div>
+              </div>
+              <div id="games" class="games"></div>
+              <div class="text-secondary"><span data-key="steam13">
+                  Last update: </span><time id="updated"><span data-key="steam14">when the scheduled sync runs</span></time><span data-key="steam15"> · Daily 22:23 (UTC) Sync ·
+                  Data calculated from the official Steam Web API.
+              </span></div>
+          </section>
+      </div>
+  </div>
+  <script src="steam-data.js"></script>
+</body>
+</html>

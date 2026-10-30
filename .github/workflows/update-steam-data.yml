@@ -24,17 +24,13 @@ jobs:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
         run: |
           node test/ai/scripts/update-steam-data.mjs
-          node js/update-steam-data_en-us.mjs
-          node js/update-steam-data_zh-hans.mjs
-          node js/update-steam-data_zh-hant.mjs
+          node js/update-steam-data.mjs
 
       - name: Commit changed data
         run: |
           if git diff --quiet -- \
             test/ai/steam_data_en-us.html \
-            iframe/steam-data_en-us.html \
-            iframe/steam-data_zh-hans.html \
-            iframe/steam-data_zh-hant.html; then
+            iframe/steam-data.html; then
             echo "Steam data did not change."
             exit 0
           fi
@@ -42,8 +38,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add \
             test/ai/steam_data_en-us.html \
-            iframe/steam-data_en-us.html \
-            iframe/steam-data_zh-hans.html \
-            iframe/steam-data_zh-hant.html
+            iframe/steam-data.html
           git commit -m "chore: update Steam card data for all pages"
           git push
