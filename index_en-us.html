@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FlashDragon's Home</title>
+    <link rel="icon" type="image/x-icon" href="https://flashdragons.github.io/assets/icon.ico">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/font-face.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/index_body.css">
+    <link rel="stylesheet" href="https://flashdragons.github.io/css/clock_style.css">
+</head>
+<body>
+    <div class="background-slider" aria-hidden="true">
+        <div class="background-slide is-active"></div>
+        <div class="background-slide"></div>
+    </div>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row row-show d-flex align-items-center">
+                <div class="col-lg-6 col-md-6 text-base"><img src="https://flashdragons.github.io/assets/icon.ico" alt="Icon" class="img-fluid" width="20"> FlashDragon's Home</div>
+                <div class="col-lg-6 col-md-6 text-end">
+                    <a href="index_zh-hans.html"><button type="button" class="btn btn-outline-warning">简体中文</button></a>
+                    <a href="index_zh-hant.html"><button type="button" class="btn btn-outline-warning">繁體中文</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-3">
+        <div class="alert alert-warning alert-dismissible fade show">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Notice: </strong>The homepage has moved to <a href="flashdragons.github.io">flashdragons.github.io</a>, this page is no longer being updated.
+        </div>
+        <h1 class="d-flex align-items-center justify-content-center">Welcome to my home on the Internet!</h1> <!--水平垂直居中的文字-->
+        <hr class="border-primary border-3 opacity-75">
+        <div class="row row-show align-items-stretch">
+            <div class="col-lg-8 col-md-7 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
+                <div class="fd-text-orange">Here are my more accounts:</div>
+                <ul>
+                    <p>
+                        <a href="https://space.bilibili.com/2144306939" target="_blank"><button type="button" class="btn btn-outline-primary">Bilibili</button></a>
+                        <a href="https://tieba.baidu.com/home/main?un=Spring_Horizon" target="_blank"><button type="button" class="btn btn-outline-primary">Tieba</button></a>
+                        <a href="https://center.mcmod.cn/578277/" target="_blank"><button type="button" class="btn btn-outline-primary">MCMod</button></a>
+                        <a href="https://klpbbs.com/space-uid-1281196.html" target="_blank"><button type="button" class="btn btn-outline-primary">KLPBBS</button></a>
+                        <a href="https://home.gamer.com.tw/profile/index.php?&owner=FlashDragons" target="_blank"><button type="button" class="btn btn-outline-primary">Bahamut</button></a>
+                        <a href="https://www.mcbbs.co/space-uid-56281.html" target="_blank"><button type="button" class="btn btn-outline-primary">MCBBS(Memorial Edition)</button></a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/FlashDragons" target="_blank"><button type="button" class="btn btn-outline-primary">GitHub</button></a>
+                        <a href="https://x.com/FlashDragon0429" target="_blank"><button type="button" class="btn btn-outline-primary">X</button></a>
+                        <a href="https://s.team/p/jgwv-fdrf" target="_blank"><button type="button" class="btn btn-outline-primary">Steam</button></a>
+                        <a href="https://namemc.com/profile/Flash_Dragon.2" target="_blank"><button type="button" class="btn btn-outline-primary">NameMC</button></a>
+                        <a href="https://www.reddit.com/user/ComprehensivePair880/" target="_blank"><button type="button" class="btn btn-outline-primary">Reddit</button></a>
+                        <a href="https://www.youtube.com/@Flash_Dragons" target="_blank"><button type="button" class="btn btn-outline-primary">YouTube</button></a>
+                        <a href="https://www.planetminecraft.com/member/flashdragon" target="_blank"><button type="button" class="btn btn-outline-primary">PlanetMinecraft</button></a>
+                    </p>
+                </ul>
+                <div>I like playing video games, and there are some strategies on my website: <a href="wiki/?lang=en-us" target="_blank">Wiki Content</a>.</div>
+                <div>I have archived some forums' pages here: <a href="bbs/index_en-us.html" target="_blank">Internet Forums archive</a>.</div>
+                <div>There are some test pages on my website: <a href="test/index.html" target="_blank">Test Pages Index</a>.</div>
+                <div>Actually, I'm still learning how to write websites. And wishing to improve my skills soon.</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient text-center w-100">
+                    <h3>Local Time</h3>
+                    <div class="d-inline-block border border-secondary rounded p-3 bg-dark">
+                        <div class="time-display" id="timeDisplay">00:00:00</div>
+                        <div class="date-display" id="dateDisplay">2026 August 6, Thursday</div>
+                        <button type="button" class="btn btn-outline-primary control-btn" data-clock-format="12" aria-pressed="false" onclick="toggleFormat(12)">12H</button>
+                        <button type="button" class="btn btn-outline-primary control-btn active" data-clock-format="24" aria-pressed="true" onclick="toggleFormat(24)">24H</button>
+                        <button type="button" class="btn btn-outline-primary control-btn active" data-clock-seconds aria-pressed="true" onclick="toggleSeconds()">Show/Hide Seconds</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="row row-show align-items-stretch">
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
+                    <iframe id="minecraftDataFrame" data-auto-height src="iframe/minecraft-data_en-us.html"
+                    style="background: transparent; border: 0px; width: 100%;"
+                    allowtransparency="true">
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="border border-primary rounded p-3 bg-gradient w-100">
+                    <iframe id="steamDataFrame" data-auto-height src="iframe/steam-data_en-us.html"
+                    style="background: transparent; border: 0px; width: 100%;"
+                    allowtransparency="true">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <footer class="footer"> <!-- 页脚 -->
+        <div class="container-fluid">
+            <div class="row row-show">
+                <div class="col-lg-6 col-md-6 text-base">
+                    &copy; 2026 My own website, all rights reserved.
+                </div>
+                <div class="col-lg-6 col-md-6 text-end">
+                    &radic; The Safi'jiiva and Xeno'jiiva background image comes from 
+                    <a href="https://x.com/GemRune_/status/1826915533234872716" target="_blank">X</a> and was created by 
+                    <a href="https://x.com/Gemrune_" target="_blank">でぃあ</a>. This site has obtained 
+                    <a href="https://flashdragons.github.io/assets/pics/right.webp" target="_blank">permission</a> to use it.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://flashdragons.github.io/js/index_body.js"></script>
+    <script src="https://flashdragons.github.io/js/clock_style.js"></script>
+    <script src="https://flashdragons.github.io/js/bootstrap.bundle.min.js"></script>
+    <script src="https://flashdragons.github.io/js/auto_height_iframe.js"></script>
+</body>
+</html>
