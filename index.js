@@ -133,7 +133,7 @@ const translations = {
         "mc36": "Created: ",
         "mc39": "Playtime: ",
         "mc41": "Created: ",
-        "mc43": "*since December 24 2025, because the original file was damanged.",
+        "mc43": "*Since December 24 2025, because the original file was damanged.",
         "mc44": "Last updated: Aug 15, 2026 ·Manual update."
     },
     "zh-hans": {
