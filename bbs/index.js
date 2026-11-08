@@ -86,7 +86,7 @@ function changeLanguage(lang) {
     });
     document.documentElement.lang = lang;
     document.getElementById('languageSelect').value = lang;
-    document.getElementById('homeLink').href = `../index.html?lang=${lang}`;
+    document.getElementById('homeLink').href = `../?lang=${lang}`;
     if (typeof updateDateDisplay === 'function') updateDateDisplay(new Date());
 }
 window.addEventListener('DOMContentLoaded', () => {

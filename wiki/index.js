@@ -43,7 +43,7 @@ function changeLanguage(lang) {
     document.getElementById('languageSelect').value = lang;
     document.getElementById('minecraftLink').href = `minecraft/?lang=${lang}`;
     document.getElementById('mhstLink').href = `MHST/?lang=${lang}`;
-    document.getElementById('homeLink').href = `/index.html?lang=${lang}`;
+    document.getElementById('homeLink').href = `/?lang=${lang}`;
     if (typeof updateDateDisplay === 'function') updateDateDisplay(new Date());
 }
 
