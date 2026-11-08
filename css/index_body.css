@@ -88,6 +88,10 @@ a:hover{
 a:active{
     color: darkorange;/*被点击瞬间*/
 }
+.header{
+    background-color: var(--fd-color-bar);
+    color: var(--fd-color-auxiliary);
+}
 .navbar{
     background-color: var(--fd-color-bar);
     color: var(--fd-color-auxiliary);
