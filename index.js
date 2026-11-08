@@ -82,6 +82,7 @@ const minecraftWorlds = [
 const translations = {
     "en-us": {
         "title": "FlashDragon's Home",
+        "iconAlt": 'Icon',
         "home1": " FlashDragon's Home",
         "home5": "Welcome to my home on the Internet!",
         "home6": "Here are my more accounts:",
@@ -138,6 +139,7 @@ const translations = {
     },
     "zh-hans": {
         "title": "FlashDragon的主页",
+        "iconAlt": '图标',
         "home1": " FlashDragon的主页",
         "home5": "欢迎来到我的互联网主页！",
         "home6": "这些是我的更多账号：",
@@ -194,6 +196,7 @@ const translations = {
     },
     "zh-hant": {
         "title": "FlashDragon的主頁",
+        "iconAlt": '圖標',
         "home1": " FlashDragon的主頁",
         "home5": "歡迎來到我的互聯網主頁！",
         "home6": "這些是我的更多賬號：",
