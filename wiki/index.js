@@ -1,6 +1,6 @@
 const translations = {
     'en-us': {
-        title: 'Wiki Home', iconAlt: 'Icon', header: 'Wiki Home', welcome: 'Welcome to my wiki!',
+        title: 'Wiki Homepage', iconAlt: 'Icon', header: 'Wiki Homepage', welcome: 'Welcome to my wiki!',
         intro1: 'I like playing Minecraft and Monster Hunter, and I have written some strategies for them.',
         intro2: "I'm not a professional writer, but I try to make my content as clear and helpful as possible.",
         linksIntro: 'Here are the links to the games:', minecraft: 'Minecraft Strategies', mhst: 'Monster Hunter Stories Strategies',

@@ -81,9 +81,9 @@ const minecraftWorlds = [
 ];
 const translations = {
     "en-us": {
-        "title": "FlashDragon's Home",
+        "title": "FlashDragon's Homepage",
         "iconAlt": 'Icon',
-        "home1": " FlashDragon's Home",
+        "home1": " FlashDragon's Homepage",
         "home5": "Welcome to my home on the Internet!",
         "home6": "Here are my more accounts:",
         "home7": "Bilibili",
