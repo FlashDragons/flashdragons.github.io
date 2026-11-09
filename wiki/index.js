@@ -4,7 +4,7 @@ const translations = {
         intro1: 'I like playing Minecraft and Monster Hunter, and I have written some strategies for them.',
         intro2: "I'm not a professional writer, but I try to make my content as clear and helpful as possible.",
         linksIntro: 'Here are the links to the games:', minecraft: 'Minecraft Strategies', mhst: 'Monster Hunter Stories Strategies',
-        backPrefix: 'Back to ', home: 'Home Page', backSuffix: '.',
+        backPrefix: 'Back to ', home: 'Homepage', backSuffix: '.',
         localTime: 'Local Time', hour12: '12H', hour24: '24H', seconds: 'Show/Hide Seconds',
         copyright: '© 2026 My own website, all rights reserved.',
         credit1: "√ The Safi'jiiva and Xeno'jiiva background image comes from ", credit2: ' and was created by ', credit3: '. This site has obtained ', permission: 'permission', credit4: ' to use it.'

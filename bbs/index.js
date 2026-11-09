@@ -11,7 +11,7 @@ const translations = {
         "beauty": "KLPBBS Beauty Script",
         "beautySuffix": "): ",
         "backPrefix": "Back to ",
-        "home": "Home Page",
+        "home": "Homepage",
         "backSuffix": ".",
         "localTime": "Local Time",
         "hour12": "12H",

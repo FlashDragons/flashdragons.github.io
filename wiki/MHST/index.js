@@ -4,7 +4,7 @@ const translations = {
         welcome: 'Welcome to the Monster Hunter Stories Wiki!',
         intro: 'This wiki is dedicated to providing strategies and information about Monster Hunter Stories.',
         explore: 'Feel free to explore the various pages!', eggs: 'Monster Hunter Stories 1 All Eggs Encyclopedia',
-        backPrefix: 'Back to ', home: 'Home Page', backSuffix: '.',
+        backPrefix: 'Back to ', home: 'Wiki Homepage', backSuffix: '.',
         copyright: '© 2026 My own website, all rights reserved.',
         credit1: "√ The Safi'jiiva and Xeno'jiiva background image comes from ", credit2: ' and was created by ', credit3: '. This site has obtained ', permission: 'permission', credit4: ' to use it.'
     },
@@ -13,7 +13,7 @@ const translations = {
         welcome: '欢迎来到怪物猎人物语百科！',
         intro: '本百科致力于提供怪物猎人物语的攻略和相关信息。',
         explore: '欢迎浏览各个页面！', eggs: '怪物猎人物语1全蛋图鉴',
-        backPrefix: '返回', home: '首页', backSuffix: '。',
+        backPrefix: '返回', home: '百科首页', backSuffix: '。',
         copyright: '© 2026 我的个人网站，保留所有权利。',
         credit1: '√ 冥赤龙和冥灯龙背景图片来自', credit2: '，作者为', credit3: '。本站已获得其', permission: '授权', credit4: '使用该图片。'
     },
@@ -22,7 +22,7 @@ const translations = {
         welcome: '歡迎來到魔物獵人物語百科！',
         intro: '本百科致力於提供魔物獵人物語的攻略與相關資訊。',
         explore: '歡迎瀏覽各個頁面！', eggs: '魔物獵人物語1全蛋圖鑑',
-        backPrefix: '返回', home: '首頁', backSuffix: '。',
+        backPrefix: '返回', home: '百科首頁', backSuffix: '。',
         copyright: '© 2026 我的個人網站，保留所有權利。',
         credit1: '√ 冥赤龍與冥燈龍背景圖片來自', credit2: '，作者為', credit3: '。本站已獲得其', permission: '授權', credit4: '使用該圖片。'
     }
