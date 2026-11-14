@@ -138,7 +138,7 @@ const translations = {
         "mc39": "Playtime: ",
         "mc41": "Created: ",
         "mc43": "*Since December 24 2025, because the original file was damanged.",
-        "mc44": "Last updated: Aug 15, 2026 ·Manual update."
+        "mc44": "Last updated: Nov 14, 2026 ·Manual update."
     },
     "zh-hans": {
         "title": "FlashDragon的主页",
@@ -198,7 +198,7 @@ const translations = {
         "mc39": "游玩时长：",
         "mc41": "创建于：",
         "mc43": "*自2025年12月24日起，因为原始文件损坏了。",
-        "mc44": "最后更新：2026年8月15日 · 手动更新。"
+        "mc44": "最后更新：2026年11月14日 · 手动更新。"
     },
     "zh-hant": {
         "title": "FlashDragon的主頁",
@@ -258,7 +258,7 @@ const translations = {
         "mc39": "遊玩時長：",
         "mc41": "建立於：",
         "mc43": "*自2025年12月24日起，因為原始檔案損壞了。",
-        "mc44": "最後更新：2026年8月15日 · 手動更新。"
+        "mc44": "最後更新：2026年11月14日 · 手動更新。"
     }
 };
 
