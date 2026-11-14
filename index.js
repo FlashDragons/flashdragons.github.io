@@ -3,9 +3,9 @@ const minecraftWorlds = [
     {
         "name": "A New Hope",
         "playtime": {
-            "en-us": "596.4 hours",
-            "zh-hans": "596.4 小时",
-            "zh-hant": "596.4 小時"
+            "en-us": "657.84 hours",
+            "zh-hans": "657.84 小时",
+            "zh-hant": "657.84 小時"
         },
         "created": {
             "en-us": "July 9 2023",
@@ -16,9 +16,9 @@ const minecraftWorlds = [
     {
         "name": "丛林",
         "playtime": {
-            "en-us": "13.9 hours*",
-            "zh-hans": "13.9 小时*",
-            "zh-hant": "13.9 小時*"
+            "en-us": "13.90 hours*",
+            "zh-hans": "13.90 小时*",
+            "zh-hant": "13.90 小時*"
         },
         "created": {
             "en-us": "August 16 2016",
@@ -29,9 +29,9 @@ const minecraftWorlds = [
     {
         "name": "Isle of Berk",
         "playtime": {
-            "en-us": "214.2 hours",
-            "zh-hans": "214.2 小时",
-            "zh-hant": "214.2 小時"
+            "en-us": "214.20 hours",
+            "zh-hans": "214.20 小时",
+            "zh-hant": "214.20 小時"
         },
         "created": {
             "en-us": "September 29 2023",
